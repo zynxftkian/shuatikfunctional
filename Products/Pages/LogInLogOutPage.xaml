@@ -1,0 +1,211 @@
+<ContentPage
+    x:Class="Products.Pages.LogInLogOutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LogInLogOutPage">
+
+    <Grid BackgroundColor="#DDD7C4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!--  Takes full screen height  -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!--  Takes full screen width  -->
+        </Grid.ColumnDefinitions>
+
+        <!--  Centered VerticalStackLayout  -->
+        <VerticalStackLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            Padding="20"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+            <!--  Login Page  -->
+            <Frame
+                x:Name="LogIn"
+                Padding="30"
+                BackgroundColor="#531414"
+                CornerRadius="20"
+                HeightRequest="{OnPlatform Android=500,
+                                           iOS=550,
+                                           Default=900}"
+                HorizontalOptions="Center"
+                IsVisible="True"
+                VerticalOptions="Center"
+                WidthRequest="{OnPlatform Android=320,
+                                          iOS=350,
+                                          Default=1000}">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="20">
+                    <Image
+                        HeightRequest="{OnPlatform Android=150,
+                                                   Default=350}"
+                        HorizontalOptions="Center"
+                        Source="newlogo.png"
+                        WidthRequest="{OnPlatform Android=150,
+                                                  Default=350}" />
+
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        CornerRadius="15"
+                        HeightRequest="45"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=400}">
+                        <Entry
+                            x:Name="UsernameEntry"
+                            BackgroundColor="Transparent"
+                            FontFamily="InstrumentSerif"
+                            HeightRequest="50"
+                            Placeholder="Username"
+                            TextColor="Black" />
+                    </Frame>
+
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        CornerRadius="15"
+                        HeightRequest="45"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=400}">
+                        <Entry
+                            x:Name="PasswordEntry"
+                            FontFamily="InstrumentSerif"
+                            HeightRequest="45"
+                            IsPassword="True"
+                            Placeholder="Password"
+                            TextColor="Black" />
+                    </Frame>
+
+                    <Button
+                        BackgroundColor="#FFBD59"
+                        Clicked="OnLogin1Clicked"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        Text="LOG IN"
+                        TextColor="Black"
+                        WidthRequest="250" />
+
+                    <Button
+                        BackgroundColor="Transparent"
+                        Clicked="OnSignUpClicked"
+                        HorizontalOptions="Center"
+                        Text="Don't have an account? Sign Up"
+                        TextColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!--  Sign Up Page  -->
+            <Frame
+                x:Name="SignIn"
+                Padding="30"
+                BackgroundColor="#531414"
+                CornerRadius="20"
+                HeightRequest="{OnPlatform Android=600,
+                                           iOS=550,
+                                           Default=900}"
+                HorizontalOptions="Center"
+                IsVisible="False"
+                VerticalOptions="Center"
+                WidthRequest="{OnPlatform Android=320,
+                                          iOS=350,
+                                          Default=1000}">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="20">
+                    <Image
+                        HeightRequest="{OnPlatform Android=150,
+                                                   Default=350}"
+                        HorizontalOptions="Center"
+                        Source="newlogo.png"
+                        WidthRequest="{OnPlatform Android=150,
+                                                  Default=350}" />
+
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        CornerRadius="15"
+                        HeightRequest="45"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=400}">
+                        <Entry
+                            x:Name="usernameEntry"
+                            FontFamily="InstrumentSerif"
+                            HeightRequest="45"
+                            Placeholder="Username"
+                            TextColor="Black" />
+                    </Frame>
+
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        CornerRadius="15"
+                        HeightRequest="45"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=400}">
+                        <Entry
+                            x:Name="passwordEntry"
+                            FontFamily="InstrumentSerif"
+                            HeightRequest="45"
+                            IsPassword="True"
+                            Placeholder="Password"
+                            TextColor="Black" />
+                    </Frame>
+
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        CornerRadius="15"
+                        HeightRequest="45"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=400}">
+                        <Entry
+                            x:Name="emailEntry"
+                            FontFamily="InstrumentSerif"
+                            HeightRequest="45"
+                            Placeholder="Email"
+                            TextColor="Black" />
+                    </Frame>
+
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        CornerRadius="15"
+                        HeightRequest="45"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=400}">
+                        <Entry
+                            x:Name="phoneNumberEntry"
+                            FontFamily="InstrumentSerif"
+                            HeightRequest="45"
+                            Placeholder="Phone Number"
+                            TextColor="Black" />
+                    </Frame>
+
+                    <Button
+                        BackgroundColor="#FFB74D"
+                        Clicked="OnLogin2Clicked"
+                        HeightRequest="50"
+                        Text="SIGN UP"
+                        TextColor="Black"
+                        WidthRequest="250" />
+
+                    <Button
+                        BackgroundColor="Transparent"
+                        Clicked="OnBackToLoginClicked"
+                        HorizontalOptions="Center"
+                        Text="Back to Login"
+                        TextColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </Grid>
+
+
+</ContentPage>

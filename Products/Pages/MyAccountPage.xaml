@@ -1,0 +1,382 @@
+<ContentPage
+    x:Class="Products.Pages.MyAccountPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MyAccountPage">
+    <Grid RowDefinitions="Auto,*">
+        <Grid>
+            <Grid
+                x:Name="Sidebar"
+                Padding="50,0,50,0"
+                BackgroundColor="#531414"
+                HeightRequest="{OnPlatform Android=800,
+                                           iOS=900}"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="False"
+                TranslationX="-250"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Spacing="40"
+                    VerticalOptions="CenterAndExpand">
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnMyAccountClicked"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="MY ACCOUNT"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnHomeClicked"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="HOME"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnProductsClicked"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="PRODUCTS"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnOrdersClicked"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="CART"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+                    <Button
+                        x:Name="MobileLogInLogOutButton"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogInOrSignUpClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="LOG IN / SIGN UP"
+                        TextColor="White" />
+
+                    <Button
+                        x:Name="MobileLogOutButton"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogOutClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="LOG OUT"
+                        TextColor="White" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <Grid
+                Padding="10,10,0,10"
+                BackgroundColor="{OnPlatform Android=#ddd7c4,
+                                             Default=#531414}"
+                HeightRequest="70"
+                Row="0"
+                VerticalOptions="Start"
+                ZIndex="1">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="Auto" />
+
+                    <ColumnDefinition Width="*" />
+
+                    <ColumnDefinition Width="Auto" />
+
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    x:Name="HamburgerButton"
+                    Grid.Column="0"
+                    BackgroundColor="#531414"
+                    Clicked="ToggleSidebar"
+                    FontSize="24"
+                    Text="☰"
+                    TextColor="#FFBD59"
+                    WidthRequest="50" />
+
+                <!--  Text SHUATIK in the middle  -->
+                <Label
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="24"
+                    HorizontalOptions="Center"
+                    IsVisible="{OnPlatform Android=true,
+                                           Default=false}"
+                    Text="SHUATIK"
+                    TextColor="#FFBD59"
+                    VerticalOptions="Center" />
+
+                <!--  Logo moved to the right  -->
+                <Frame
+                    Grid.Column="{OnPlatform Android=2,
+                                             Default=0}"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    HeightRequest="150"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    WidthRequest="150">
+                    <Image Aspect="AspectFit" Source="newlogo.png" />
+                </Frame>
+
+                <HorizontalStackLayout
+                    x:Name="NavbarButtons"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Spacing="100">
+
+                    <Button
+                        x:Name="HomeButton"
+                        BackgroundColor="#531414"
+                        Clicked="OnHomeClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="HOME"
+                        TextColor="#FFBD59"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="ProductsButton"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        BorderWidth="3"
+                        Clicked="OnProductsClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="PRODUCTS"
+                        TextColor="#FFBD59"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="CartButton"
+                        BackgroundColor="Transparent"
+                        Clicked="OnOrdersClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="CART"
+                        TextColor="#FFBD59"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="DesktopLogInLogOutButton"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogInOrSignUpClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        Text="LOG IN / SIGN UP"
+                        TextColor="White"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="DesktopLogOutButton"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogOutClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        Text="LOG OUT"
+                        TextColor="White"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="MyAccount"
+                        BackgroundColor="Transparent"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnMyAccountClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="MY ACCOUNT"
+                        TextColor="#FFBD59"
+                        WidthRequest="150">
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+                    </Button>
+
+                </HorizontalStackLayout>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid
+            x:Name="UserInformation"
+            Grid.Row="1"
+            Padding="{OnPlatform Android=30,
+                                 Default=60}"
+            BackgroundColor="#DDD7C4">
+            <Frame
+                BackgroundColor="#531414"
+                CornerRadius="20"
+                HeightRequest="{OnPlatform Android=600,
+                                           iOS=550,
+                                           Default=700}"
+                VerticalOptions="Center"
+                WidthRequest="{OnPlatform Android=320,
+                                          iOS=350,
+                                          Default=800}">
+                <VerticalStackLayout Padding="30" Spacing="10">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnPlatform Android=30,
+                                              Default=50}"
+                        HorizontalOptions="Center"
+                        Text="YOUR"
+                        TextColor="#FFBD59" />
+                    <Image
+                        HeightRequest="{OnPlatform Android=100,
+                                                   Default=150}"
+                        HorizontalOptions="Center"
+                        Source="newlogo.png"
+                        WidthRequest="{OnPlatform Android=100,
+                                                  Default=150}" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnPlatform Android=30,
+                                              Default=50}"
+                        HorizontalOptions="Center"
+                        Text="ACCOUNT"
+                        TextColor="#FFBD59" />
+                    <Frame
+                        Padding="10"
+                        BackgroundColor="#531414"
+                        BorderColor="#FFBD59"
+                        CornerRadius="20"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=300}">
+                        <VerticalStackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="30"
+                                HorizontalOptions="Center"
+                                Text="Username"
+                                TextColor="#FFBD59" />
+                            <Label
+                                x:Name="usernameLabel"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="20"
+                                HorizontalOptions="Center"
+                                TextColor="#FFBD59" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame
+                        Padding="10"
+                        BackgroundColor="#531414"
+                        BorderColor="#FFBD59"
+                        CornerRadius="20"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=300}">
+                        <VerticalStackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="30"
+                                HorizontalOptions="Center"
+                                Text="Email"
+                                TextColor="#FFBD59" />
+                            <Label
+                                x:Name="emailLabel"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="20"
+                                HorizontalOptions="Center"
+                                TextColor="#FFBD59" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame
+                        Padding="10"
+                        BackgroundColor="#541414"
+                        BorderColor="#FFBD59"
+                        CornerRadius="20"
+                        WidthRequest="{OnPlatform Android=250,
+                                                  Default=300}">
+                        <VerticalStackLayout>
+                            <Label
+                                BackgroundColor="#541414"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="30"
+                                HorizontalOptions="Center"
+                                Text="Phone Number"
+                                TextColor="#FFBD59" />
+                            <Label
+                                x:Name="phoneNumberLabel"
+                                BackgroundColor="#541414"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="20"
+                                HorizontalOptions="Center"
+                                TextColor="#ffbd59" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

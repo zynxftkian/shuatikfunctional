@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Products.Pages.PrivacyPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PrivacyPage">
+
+    <ScrollView BackgroundColor="#ddd7c4">
+        <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
+
+            <!--  Back Button  -->
+            <Button
+                BackgroundColor="Transparent"
+                Clicked="OnBackButtonClicked"
+                CornerRadius="25"
+                FontSize="70"
+                HorizontalOptions="Start"
+                Text="←"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <!--  Header Section  -->
+            <Grid
+                ColumnDefinitions="Auto,Auto,Auto,Auto"
+                ColumnSpacing="20"
+                HorizontalOptions="Center">
+                <Label
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="{OnPlatform Android=30,
+                                          Default=100}"
+                    Text="PRIVACY"
+                    TextColor="Orange" />
+                <Label
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="{OnPlatform Android=30,
+                                          Default=100}"
+                    Text="POLICY"
+                    TextColor="Orange" />
+                <Label
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="{OnPlatform Android=30,
+                                          Default=100}"
+                    Text="OF"
+                    TextColor="Orange" />
+                <Image
+                    Grid.Column="3"
+                    Aspect="AspectFill"
+                    HeightRequest="{OnPlatform Android=80,
+                                               Default=200}"
+                    Source="newlogo.png"
+                    WidthRequest="{OnPlatform Android=80,
+                                              Default=200}" />
+            </Grid>
+
+            <Label
+                FontAttributes="Bold"
+                FontFamily="InstrumentSerif"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="(LAST UPDATED: APRIL 1 2005)"
+                TextColor="Orange" />
+
+            <!--  Privacy Policy Sections  -->
+            <Frame
+                Margin="{OnPlatform Android='10,0,10,0',
+                                    Default='100,0,100,0'}"
+                Padding="10"
+                BackgroundColor="#541414"
+                BorderColor="#ffbd59">
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    Text="Welcome to Shuatik! Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our .NET MAUI application (App)."
+                    TextColor="#ffbd59" />
+            </Frame>
+
+            <Frame
+                Margin="{OnPlatform Android='10,0,10,0',
+                                    Default='100,0,100,0'}"
+                Padding="10"
+                BackgroundColor="#541414"
+                BorderColor="#ffbd59">
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="30"
+                        HorizontalTextAlignment="Center"
+                        Text="Information We Collect"
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Personal Information: Name, email, phone number."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Usage Data: Features accessed, time spent on the app."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Device Info: Model, OS, and technical details."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Log Data: IP address, browser type, and system logs."
+                        TextColor="#ffbd59" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Margin="{OnPlatform Android='10,0,10,0',
+                                    Default='100,0,100,0'}"
+                Padding="10"
+                BackgroundColor="#541414"
+                BorderColor="#ffbd59">
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="30"
+                        HorizontalTextAlignment="Center"
+                        Text="How We Use Your Information"
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Improve app functionality."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Personalize user experience."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Analyze usage trends."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Send important updates."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Ensure security."
+                        TextColor="#ffbd59" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Margin="{OnPlatform Android='10,0,10,0',
+                                    Default='100,0,100,0'}"
+                Padding="10"
+                BackgroundColor="#541414"
+                BorderColor="#ffbd59">
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="30"
+                    HorizontalTextAlignment="Center"
+                    Text="We implement security measures, but no system is 100% secure."
+                    TextColor="#ffbd59" />
+            </Frame>
+
+            <Frame
+                Margin="{OnPlatform Android='10,0,10,0',
+                                    Default='100,0,100,0'}"
+                Padding="10"
+                BackgroundColor="#541414"
+                BorderColor="#ffbd59">
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="30"
+                        HorizontalTextAlignment="Center"
+                        Text="Your Rights and Choices"
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Access, correct, or delete data."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Opt out of marketing."
+                        TextColor="#ffbd59" />
+                    <Label
+                        FontFamily="InstrumentSerif"
+                        Text="• Restrict data processing."
+                        TextColor="#ffbd59" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Margin="{OnPlatform Android='10,0,10,0',
+                                    Default='100,0,100,0'}"
+                Padding="10"
+                BackgroundColor="#541414"
+                BorderColor="#ffbd59">
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="30"
+                    HorizontalTextAlignment="Center"
+                    Text="Changes to This Policy: We may update our Privacy Policy from time to time."
+                    TextColor="#ffbd59" />
+            </Frame>
+
+            <Frame
+                Margin="{OnPlatform Android='10,0,10,0',
+                                    Default='100,0,100,0'}"
+                Padding="10"
+                BackgroundColor="#541414"
+                BorderColor="#ffbd59">
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="30"
+                        HorizontalOptions="Center"
+                        Text="Contact Us:"
+                        TextColor="#ffbd59" />
+                    <Button
+                        BackgroundColor="Orange"
+                        Clicked="OnContactUsClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="CONTACT US"
+                        TextColor="Black"
+                        WidthRequest="200" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

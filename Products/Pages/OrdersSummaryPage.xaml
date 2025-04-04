@@ -1,0 +1,472 @@
+<ContentPage
+    x:Class="Products.Pages.OrdersSummaryPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid RowDefinitions="Auto,*">
+        <Grid>
+
+            <Grid
+                x:Name="Sidebar"
+                Padding="50,0,50,0"
+                BackgroundColor="#531414"
+                HeightRequest="{OnPlatform Android=800,
+                                           iOS=900}"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="False"
+                TranslationX="-250"
+                VerticalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Spacing="50"
+                    VerticalOptions="CenterAndExpand">
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnMyAccountClicked"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="MY ACCOUNT"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnHomeClicked"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="HOME"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnProductsClicked"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="PRODUCTS"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+
+                    <Button
+                        BackgroundColor="#531414"
+                        BorderColor="Black"
+                        BorderWidth="3"
+                        Clicked="OnOrdersClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="CART"
+                        TextColor="#FFBD59"
+                        WidthRequest="200" />
+
+                    <Button
+                        x:Name="MobileLogInLogOutButton"
+                        Grid.Row="4"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogInOrSignUpClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="LOG IN / SIGN UP"
+                        TextColor="White"
+                        VerticalOptions="End" />
+
+                    <Button
+                        x:Name="MobileLogOutButton"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogOutClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        HeightRequest="60"
+                        Text="LOG OUT"
+                        TextColor="White" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <Grid
+                Padding="10,10,0,10"
+                BackgroundColor="{OnPlatform Android=#ddd7c4,
+                                             Default=#531414}"
+                HeightRequest="70"
+                Row="0"
+                VerticalOptions="Start"
+                ZIndex="1">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="Auto" />
+
+                    <ColumnDefinition Width="*" />
+
+                    <ColumnDefinition Width="Auto" />
+
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    x:Name="HamburgerButton"
+                    Grid.Column="0"
+                    BackgroundColor="#531414"
+                    Clicked="ToggleSidebar"
+                    FontSize="24"
+                    Text="☰"
+                    TextColor="#FFBD59"
+                    WidthRequest="50" />
+
+                <!--  Text SHUATIK in the middle  -->
+                <Label
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontFamily="InstrumentSerif"
+                    FontSize="24"
+                    HorizontalOptions="Center"
+                    IsVisible="{OnPlatform Android=true,
+                                           Default=false}"
+                    Text="SHUATIK"
+                    TextColor="#FFBD59"
+                    VerticalOptions="Center" />
+
+                <!--  Logo moved to the right  -->
+                <Frame
+                    Grid.Column="{OnPlatform Android=2,
+                                             Default=0}"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    HeightRequest="150"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    WidthRequest="150">
+                    <Image Aspect="AspectFit" Source="newlogo.png" />
+                </Frame>
+
+                <HorizontalStackLayout
+                    x:Name="NavbarButtons"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Spacing="100">
+
+                    <Button
+                        x:Name="HomeButton"
+                        BackgroundColor="#531414"
+                        Clicked="OnHomeClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="HOME"
+                        TextColor="#FFBD59"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="ProductsButton"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        BorderWidth="3"
+                        Clicked="OnProductsClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="PRODUCTS"
+                        TextColor="#FFBD59"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="CartButton"
+                        Grid.Column="2"
+                        BackgroundColor="Orange"
+                        Clicked="OnOrdersClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        Text="CART"
+                        TextColor="White"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="DesktopLogInLogOutButton"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogInOrSignUpClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        Text="LOG IN / LOG OUT"
+                        TextColor="White"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="DesktopLogOutButton"
+                        BackgroundColor="Orange"
+                        Clicked="OnLogOutClicked"
+                        CornerRadius="10"
+                        FontFamily="InstrumentSerif"
+                        Text="LOG OUT"
+                        TextColor="White"
+                        WidthRequest="150">
+
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+
+                        </Button.GestureRecognizers>
+
+                    </Button>
+
+                    <Button
+                        x:Name="MyAccount"
+                        BackgroundColor="Transparent"
+                        Clicked="OnMyAccountClicked"
+                        FontFamily="InstrumentSerif"
+                        Text="MY ACCOUNT"
+                        TextColor="#FFBD59"
+                        WidthRequest="150">
+                        <Button.GestureRecognizers>
+
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+
+                        </Button.GestureRecognizers>
+                    </Button>
+
+                </HorizontalStackLayout>
+
+            </Grid>
+
+        </Grid>
+        <VerticalStackLayout
+            x:Name="MainScrollView"
+            Grid.Row="1"
+            Padding="20"
+            BackgroundColor="#ddd7c4">
+            <Frame
+                Padding="15"
+                BackgroundColor="#531414"
+                CornerRadius="20"
+                HeightRequest="{OnPlatform Android=600,
+                                           Default=800}">
+                <Grid
+                    Padding="10"
+                    ColumnDefinitions="Auto, *, *, *"
+                    HeightRequest="{OnIdiom Phone=550,
+                                            Tablet=750,
+                                            Desktop=750}"
+                    RowSpacing="10">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Order Summary Title  -->
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=25,
+                                           Tablet=40,
+                                           Desktop=50}"
+                        HorizontalOptions="Start"
+                        Text="Order Summary:"
+                        TextColor="White" />
+
+                    <!--  Username Label  -->
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=18,
+                                           Tablet=25,
+                                           Desktop=30}"
+                        Text="User Name:"
+                        TextColor="White"
+                        WidthRequest="{OnIdiom Phone=120,
+                                               Tablet=150,
+                                               Desktop=180}" />
+
+                    <!--  Username Value  -->
+                    <Label
+                        x:Name="usernameLabel"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="3"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=18,
+                                           Tablet=25,
+                                           Desktop=30}"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Username"
+                        TextColor="White" />
+
+                    <!--  Table Headers  -->
+                    <Grid
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4">
+                        <Grid ColumnDefinitions="{OnPlatform Android='Auto, Auto, Auto', Default='*, *, *'}">
+                            <Label
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="{OnIdiom Phone=18,
+                                                   Tablet=25,
+                                                   Desktop=30}"
+                                HorizontalOptions="Center"
+                                Text="Order/s"
+                                TextColor="White"
+                                WidthRequest="{OnIdiom Phone=100,
+                                                       Tablet=150,
+                                                       Desktop=200}" />
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="{OnIdiom Phone=18,
+                                                   Tablet=25,
+                                                   Desktop=30}"
+                                HorizontalOptions="Center"
+                                Text="Quantity"
+                                TextColor="White"
+                                WidthRequest="{OnIdiom Phone=100,
+                                                       Tablet=150,
+                                                       Desktop=200}" />
+                            <Label
+                                Grid.Column="2"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="{OnIdiom Phone=18,
+                                                   Tablet=25,
+                                                   Desktop=30}"
+                                HorizontalOptions="Center"
+                                Text="Price"
+                                TextColor="White"
+                                WidthRequest="{OnIdiom Phone=100,
+                                                       Tablet=150,
+                                                       Desktop=200}" />
+                        </Grid>
+                    </Grid>
+
+                    <!--  Order List with Proper Alignment  -->
+                    <CollectionView
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        Margin="10"
+                        ItemsSource="{Binding Orders}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="{OnPlatform Android='Auto, Auto, Auto', Default='*, *, *'}" RowSpacing="10">
+                                    <Label
+                                        Grid.Column="0"
+                                        FontFamily="InstrumentSerif"
+                                        FontSize="{OnIdiom Phone=18,
+                                                           Tablet=25,
+                                                           Desktop=30}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding ProductName}"
+                                        TextColor="White"
+                                        WidthRequest="{OnIdiom Phone=100,
+                                                               Tablet=150,
+                                                               Desktop=200}" />
+                                    <Label
+                                        Grid.Column="1"
+                                        FontFamily="InstrumentSerif"
+                                        FontSize="{OnIdiom Phone=18,
+                                                           Tablet=25,
+                                                           Desktop=30}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding Quantity}"
+                                        TextColor="White"
+                                        WidthRequest="{OnIdiom Phone=100,
+                                                               Tablet=150,
+                                                               Desktop=200}" />
+                                    <Label
+                                        Grid.Column="2"
+                                        FontFamily="InstrumentSerif"
+                                        FontSize="{OnIdiom Phone=18,
+                                                           Tablet=25,
+                                                           Desktop=30}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding TotalPrice}"
+                                        TextColor="White"
+                                        WidthRequest="{OnIdiom Phone=100,
+                                                               Tablet=150,
+                                                               Desktop=200}" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <!--  Total Price Section  -->
+                    <Grid
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4">
+                        <Grid ColumnDefinitions="*, *">
+                            <Label
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="{OnIdiom Phone=22,
+                                                   Tablet=28,
+                                                   Desktop=30}"
+                                HorizontalOptions="Start"
+                                Text="Total:"
+                                TextColor="White"
+                                VerticalOptions="End" />
+                            <Label
+                                x:Name="TotalPriceLabel"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="{OnIdiom Phone=22,
+                                                   Tablet=28,
+                                                   Desktop=30}"
+                                HorizontalOptions="Start"
+                                TextColor="White"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
