@@ -21,7 +21,8 @@
             <!--  Header Section  -->
             <Grid
                 ColumnDefinitions="Auto,Auto,Auto,Auto,Auto"
-                ColumnSpacing="20"
+                ColumnSpacing="{OnPlatform Android=10,
+                                           Default=20}"
                 HorizontalOptions="Center">
                 <Label
                     Grid.Column="0"
@@ -69,6 +70,13 @@
                     Text="At Shuatik, our team is dedicated to delivering high-quality food products and an exceptional digital experience. We are passionate about innovation, accessibility, and customer satisfaction. Meet the people behind Shuatik:"
                     TextColor="#ffbd59" />
             </Frame>
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="{OnPlatform Android=350,
+                                           Default=700}"
+                Source="ourteam.jpg"
+                WidthRequest="{OnPlatform Android=350,
+                                          Default=700}" />
             <Frame
                 Margin="{OnPlatform Android='10,0,10,0',
                                     Default='100,0,100,0'}"
@@ -303,13 +311,6 @@
                         TextColor="#ffbd59" />
                 </VerticalStackLayout>
             </Frame>
-            <Image
-                Aspect="AspectFill"
-                HeightRequest="{OnPlatform Android=400,
-                                           Default=700}"
-                Source="ourteam.jpg"
-                WidthRequest="{OnPlatform Android=400,
-                                          Default=700}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

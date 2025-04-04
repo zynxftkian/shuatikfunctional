@@ -22,7 +22,8 @@
             <!--  Header Section  -->
             <Grid
                 ColumnDefinitions="Auto,Auto,Auto,Auto"
-                ColumnSpacing="20"
+                ColumnSpacing="{OnPlatform Android=10,
+                                           Default=20}"
                 HorizontalOptions="Center">
                 <Label
                     Grid.Column="0"
