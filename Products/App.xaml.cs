@@ -9,7 +9,7 @@ namespace Products
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new ProductsPage());
+            MainPage = new NavigationPage (new LottieSplashPage());
         }
     }
 }

@@ -2,7 +2,8 @@
     x:Class="Products.ProductsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Products">
+    Title="Products"
+    NavigationPage.HasNavigationBar="False">
     <Grid RowDefinitions="Auto,*">
         <Grid>
             <Grid

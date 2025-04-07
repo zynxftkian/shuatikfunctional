@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Toolkit.Hosting;
 using Microsoft.Maui.Handlers;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Products;
 
@@ -12,6 +13,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseSkiaSharp()
             .UseMauiCommunityToolkit()
             .ConfigureSyncfusionToolkit()
             .ConfigureMauiHandlers(handlers =>
