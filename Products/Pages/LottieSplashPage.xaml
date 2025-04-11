@@ -10,7 +10,7 @@
         x:Name="SplashLottie"
         HeightRequest="300"
         HorizontalOptions="Center"
-        RepeatCount="-1"
+        RepeatCount="2"
         Source="Animation - 1744048711212.json"
         VerticalOptions="Center"
         WidthRequest="300" />

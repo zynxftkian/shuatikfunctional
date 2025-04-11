@@ -8,8 +8,6 @@
 
     <ScrollView BackgroundColor="#ddd7c4">
         <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
-
-            <!--  Back Button  -->
             <Button
                 BackgroundColor="Transparent"
                 Clicked="OnBackButtonClicked"
@@ -19,74 +17,71 @@
                 Text="←"
                 TextColor="Black"
                 VerticalOptions="Center" />
-
-            <!--  Header Section  -->
             <Grid
                 ColumnDefinitions="Auto,Auto,Auto,Auto"
-                ColumnSpacing="{OnPlatform Android=10,
-                                           Default=20}"
+                ColumnSpacing="10"
                 HorizontalOptions="Center">
                 <Label
                     Grid.Column="0"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="PRIVACY"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Label
                     Grid.Column="1"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="POLICY"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Label
                     Grid.Column="2"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="OF"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Image
                     Grid.Column="3"
                     Aspect="AspectFill"
-                    HeightRequest="{OnPlatform Android=80,
-                                               Default=200}"
+                    HeightRequest="{OnIdiom Phone=50,
+                                            Desktop=100}"
                     Source="newlogo.png"
-                    WidthRequest="{OnPlatform Android=80,
-                                              Default=200}" />
+                    VerticalOptions="Start"
+                    WidthRequest="{OnIdiom Phone=50,
+                                           Desktop=100}" />
             </Grid>
 
             <Label
                 FontAttributes="Bold"
                 FontFamily="InstrumentSerif"
-                FontSize="30"
+                FontSize="{OnIdiom Phone=20,
+                                   Desktop=30}"
                 HorizontalOptions="Center"
                 Text="(LAST UPDATED: APRIL 1 2005)"
-                TextColor="Orange" />
-
-            <!--  Privacy Policy Sections  -->
+                TextColor="Black" />
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="20"
+                    FontSize="{OnIdiom Phone=20,
+                                       Desktop=30}"
                     HorizontalTextAlignment="Center"
                     Text="Welcome to Shuatik! Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our .NET MAUI application (App)."
                     TextColor="#ffbd59" />
             </Frame>
-
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -94,32 +89,40 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="Information We Collect"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Personal Information: Name, email, phone number."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Usage Data: Features accessed, time spent on the app."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Device Info: Model, OS, and technical details."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Log Data: IP address, browser type, and system logs."
                         TextColor="#ffbd59" />
                 </VerticalStackLayout>
             </Frame>
-
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -127,51 +130,61 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="How We Use Your Information"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Improve app functionality."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Personalize user experience."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Analyze usage trends."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Send important updates."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Ensure security."
                         TextColor="#ffbd59" />
                 </VerticalStackLayout>
             </Frame>
-
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="30"
+                    FontSize="{OnIdiom Phone=20,
+                                       Desktop=30}"
                     HorizontalTextAlignment="Center"
                     Text="We implement security measures, but no system is 100% secure."
                     TextColor="#ffbd59" />
             </Frame>
-
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -179,43 +192,49 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="Your Rights and Choices"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Access, correct, or delete data."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Opt out of marketing."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Restrict data processing."
                         TextColor="#ffbd59" />
                 </VerticalStackLayout>
             </Frame>
-
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="30"
+                    FontSize="{OnIdiom Phone=20,
+                                       Desktop=30}"
                     HorizontalTextAlignment="Center"
                     Text="Changes to This Policy: We may update our Privacy Policy from time to time."
                     TextColor="#ffbd59" />
             </Frame>
-
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -223,20 +242,20 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalOptions="Center"
                         Text="Contact Us:"
                         TextColor="#ffbd59" />
                     <Button
                         BackgroundColor="Orange"
                         Clicked="OnContactUsClicked"
+                        FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
                         Text="CONTACT US"
-                        TextColor="Black"
-                        WidthRequest="200" />
+                        TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -13,7 +13,7 @@ namespace Products.Pages
         }
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProductsPage());
+            await Navigation.PopAsync();
         }
         private void CheckScreenSize()
         {

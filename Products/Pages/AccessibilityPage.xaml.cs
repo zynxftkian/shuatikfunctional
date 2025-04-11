@@ -8,7 +8,7 @@ public partial class AccessibilityPage : ContentPage
 	}
     private async void OnBackButtonClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ProductsPage());
+        await Navigation.PopAsync();
     }
     private async void OnContactUsClicked(object sender, EventArgs e)
     {

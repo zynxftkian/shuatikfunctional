@@ -10,11 +10,14 @@ public partial class OrdersSummaryPage : ContentPage
 {
     public ObservableCollection<OrderItem> Orders { get; set; }
 
+    private string _paymentMethod;
+
     private bool isSidebarOpen = false;
 
-    public OrdersSummaryPage()
+    public OrdersSummaryPage(string paymentMethod)
     {
         InitializeComponent();
+        _paymentMethod = paymentMethod;
         Orders = new ObservableCollection<OrderItem>(App.Orders);
 
         // Calculate total price

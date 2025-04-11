@@ -10,8 +10,7 @@
                 x:Name="Sidebar"
                 Padding="50,0,50,0"
                 BackgroundColor="#531414"
-                HeightRequest="{OnPlatform Android=800,
-                                           iOS=900}"
+                HeightRequest="850"
                 HorizontalOptions="FillAndExpand"
                 IsVisible="False"
                 TranslationX="-250"
@@ -85,20 +84,16 @@
             </Grid>
             <Grid
                 Padding="10,10,0,10"
-                BackgroundColor="{OnPlatform Android=#ddd7c4,
-                                             Default=#531414}"
+                BackgroundColor="{OnIdiom Phone=#ddd7c4,
+                                          Desktop=#531414}"
                 HeightRequest="70"
                 Row="0"
                 VerticalOptions="Start"
                 ZIndex="1">
                 <Grid.ColumnDefinitions>
-
                     <ColumnDefinition Width="Auto" />
-
                     <ColumnDefinition Width="*" />
-
                     <ColumnDefinition Width="Auto" />
-
                 </Grid.ColumnDefinitions>
                 <Button
                     x:Name="HamburgerButton"
@@ -109,22 +104,20 @@
                     Text="☰"
                     TextColor="#FFBD59"
                     WidthRequest="50" />
-                <!--  Text SHUATIK in the middle  -->
                 <Label
                     Grid.Column="1"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
                     FontSize="24"
                     HorizontalOptions="Center"
-                    IsVisible="{OnPlatform Android=true,
-                                           Default=false}"
+                    IsVisible="{OnIdiom Phone=true,
+                                        Desktop=false}"
                     Text="SHUATIK"
                     TextColor="Orange"
                     VerticalOptions="Center" />
-                <!--  Logo moved to the right  -->
                 <Frame
-                    Grid.Column="{OnPlatform Android=2,
-                                             Default=0}"
+                    Grid.Column="{OnIdiom Phone=2,
+                                          Desktop=0}"
                     BackgroundColor="Transparent"
                     BorderColor="Transparent"
                     HeightRequest="150"
@@ -148,13 +141,9 @@
                         Text="HOME"
                         TextColor="#FFBD59"
                         WidthRequest="150">
-
                         <Button.GestureRecognizers>
-
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
-
                         </Button.GestureRecognizers>
-
                     </Button>
                     <Button
                         x:Name="ProductsButton"
@@ -166,13 +155,9 @@
                         Text="PRODUCTS"
                         TextColor="#FFBD59"
                         WidthRequest="150">
-
                         <Button.GestureRecognizers>
-
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
-
                         </Button.GestureRecognizers>
-
                     </Button>
                     <Button
                         x:Name="CartButton"
@@ -182,13 +167,9 @@
                         Text="CART"
                         TextColor="#FFBD59"
                         WidthRequest="150">
-
                         <Button.GestureRecognizers>
-
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
-
                         </Button.GestureRecognizers>
-
                     </Button>
                     <Button
                         x:Name="DesktopLogInLogOutButton"
@@ -212,7 +193,6 @@
                         Text="LOG OUT"
                         TextColor="White"
                         WidthRequest="150">
-
                         <Button.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
                         </Button.GestureRecognizers>
@@ -238,12 +218,11 @@
             x:FieldModifier="public"
             Scrolled="OnScrollViewScrolled">
             <VerticalStackLayout>
-                <!--  Desktop Version  -->
                 <Grid
                     x:Name="HomeSectionDesktop"
                     Padding="20"
                     BackgroundColor="#ddd7c4"
-                    HeightRequest="900">
+                    HeightRequest="950">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="1*" />
@@ -252,7 +231,6 @@
                         Grid.Column="0"
                         HorizontalOptions="Center"
                         VerticalOptions="Center">
-
                         <Frame
                             BackgroundColor="Transparent"
                             BorderColor="Transparent"
@@ -267,14 +245,14 @@
                             FontSize="40"
                             HorizontalOptions="Center"
                             Text="Shuatik"
-                            TextColor="#FFBD59" />
+                            TextColor="Orange" />
                         <Label
                             FontAttributes="Bold"
                             FontFamily="IslandMoments"
                             FontSize="60"
                             HorizontalOptions="Center"
                             Text="SARAP NA WALASTIK!"
-                            TextColor="#FFBD59" />
+                            TextColor="Orange" />
                     </VerticalStackLayout>
                     <Frame
                         Grid.Column="1"
@@ -286,7 +264,6 @@
                         <Image Aspect="AspectFit" Source="newlogo.png" />
                     </Frame>
                 </Grid>
-                <!--  Mobile Version  -->
                 <Grid
                     x:Name="HomeSectionMobile"
                     Padding="20"
@@ -304,17 +281,15 @@
                         </Frame>
                     </VerticalStackLayout>
                 </Grid>
-
                 <Grid
                     x:Name="ProductsContainer"
                     Padding="20"
                     x:FieldModifier="public"
                     BackgroundColor="#531414"
-                    HeightRequest="900"
+                    HeightRequest="950"
                     RowDefinitions="Auto, *, Auto"
                     RowSpacing="-10"
                     VerticalOptions="FillAndExpand">
-
                     <Label
                         Grid.Row="0"
                         FontFamily="InstrumentSerif"
@@ -324,8 +299,6 @@
                         Text="Our Special Pasta"
                         TextColor="#FFBD59"
                         VerticalOptions="Start" />
-
-                    <!--  Mobile Slideshow  -->
                     <CarouselView
                         x:Name="MobileProductCarousel"
                         Grid.Row="1"
@@ -365,14 +338,11 @@
                                             VerticalOptions="Fill"
                                             WidthRequest="250">
                                             <Grid>
-                                                <!--  Product Image  -->
                                                 <Image Aspect="AspectFill" Source="{Binding Image}">
                                                     <Image.GestureRecognizers>
                                                         <TapGestureRecognizer Tapped="OnImageTapped" />
                                                     </Image.GestureRecognizers>
                                                 </Image>
-
-                                                <!--  Description (Initially Hidden)  -->
                                                 <ScrollView
                                                     x:Name="DescriptionView"
                                                     Padding="10"
@@ -395,7 +365,6 @@
                                             </Grid>
                                         </Frame>
                                     </Frame>
-
                                     <Button
                                         BackgroundColor="Orange"
                                         Clicked="OnOrderClicked"
@@ -414,20 +383,18 @@
                                         FontFamily="InstrumentSerif"
                                         FontSize="20"
                                         HorizontalOptions="Center"
-                                        Text="{OnPlatform Android=Slidable Products,
-                                                          Default=hi}"
+                                        Text="{OnIdiom Phone=Slidable   Products   →,
+                                                       Desktop=kianpogi}"
                                         TextColor="White" />
                                 </VerticalStackLayout>
                             </DataTemplate>
                         </CarouselView.ItemTemplate>
                     </CarouselView>
-                    <!--  Desktop Layout  -->
                     <Grid
                         Grid.Row="2"
-                        Padding="{OnPlatform Android=20,
-                                             Default='0,0,0,100'}"
+                        Padding="{OnIdiom Phone=20,
+                                          Desktop='0,0,0,100'}"
                         VerticalOptions="Center">
-
                         <HorizontalStackLayout
                             x:Name="DesktopProductLayout"
                             HorizontalOptions="Center"
@@ -587,18 +554,14 @@
                                 </Button>
                             </VerticalStackLayout>
                         </HorizontalStackLayout>
-
                     </Grid>
-
                 </Grid>
-
                 <BoxView
                     BackgroundColor="Black"
                     HeightRequest="2"
                     HorizontalOptions="Start"
-                    WidthRequest="{OnPlatform Android=420,
-                                              Default=1950}" />
-
+                    WidthRequest="{OnIdiom Phone=420,
+                                           Desktop=1950}" />
                 <Grid
                     x:Name="DesktopFooter"
                     Padding="60"
@@ -610,7 +573,6 @@
                     RowDefinitions="Auto,Auto"
                     RowSpacing="50"
                     VerticalOptions="End">
-
                     <Label
                         Grid.Row="0"
                         Grid.ColumnSpan="7"
@@ -621,147 +583,124 @@
                         HorizontalTextAlignment="Center"
                         Text="INFORMATIONS"
                         TextColor="#FFBD59" />
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="0"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="4"
+                        BackgroundColor="Transparent"
                         Clicked="OnAboutUsClicked"
-                        CornerRadius="15"
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        HeightRequest="50"
+                        FontSize="20"
                         Text="ABOUT US"
+                        TextColor="#ffbd59"
                         VerticalOptions="Start">
                         <Button.GestureRecognizers>
-                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Button.GestureRecognizers>
                     </Button>
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="1"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="4"
+                        BackgroundColor="Transparent"
                         Clicked="OnContactUsClicked"
-                        CornerRadius="15"
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        HeightRequest="50"
+                        FontSize="20"
                         Text="CONTACT US"
+                        TextColor="#ffbd59"
                         VerticalOptions="Start">
                         <Button.GestureRecognizers>
-                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Button.GestureRecognizers>
                     </Button>
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="2"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="4"
+                        BackgroundColor="Transparent"
                         Clicked="OnPrivacyClicked"
-                        CornerRadius="15"
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        HeightRequest="50"
+                        FontSize="20"
                         Text="PRIVACY"
+                        TextColor="#ffbd59"
                         VerticalOptions="Start">
                         <Button.GestureRecognizers>
-                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Button.GestureRecognizers>
                     </Button>
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="3"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="4"
+                        BackgroundColor="Transparent"
                         Clicked="OnTermsAndConditionsClicked"
-                        CornerRadius="15"
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        HeightRequest="50"
+                        FontSize="20"
                         Text="TERMS AND CONDITIONS"
+                        TextColor="#ffbd59"
                         VerticalOptions="Start">
                         <Button.GestureRecognizers>
-                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Button.GestureRecognizers>
                     </Button>
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="4"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="4"
+                        BackgroundColor="Transparent"
                         Clicked="OnAccessibilityClicked"
-                        CornerRadius="15"
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        HeightRequest="50"
+                        FontSize="20"
                         Text="ACCESSIBILITY"
+                        TextColor="#ffbd59"
                         VerticalOptions="Start">
                         <Button.GestureRecognizers>
-                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Button.GestureRecognizers>
                     </Button>
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="5"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="4"
+                        BackgroundColor="Transparent"
                         Clicked="OnOurTeamClicked"
-                        CornerRadius="15"
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        HeightRequest="50"
+                        FontSize="20"
                         Text="OUR TEAM"
+                        TextColor="#ffbd59"
                         VerticalOptions="Start">
                         <Button.GestureRecognizers>
-                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Button.GestureRecognizers>
                     </Button>
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="6"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="4"
+                        BackgroundColor="Transparent"
                         Clicked="OnHomeClicked"
-                        CornerRadius="15"
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        HeightRequest="50"
+                        FontSize="20"
                         Text="BACK TO TOP"
+                        TextColor="#ffbd59"
                         VerticalOptions="Start">
                         <Button.GestureRecognizers>
-                            <PointerGestureRecognizer PointerEntered="OnPointerEntered3" PointerExited="OnPointerExited3" />
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Button.GestureRecognizers>
                     </Button>
                 </Grid>
-
                 <Grid
                     x:Name="MobileFooter"
                     Padding="30"
                     BackgroundColor="#531414"
                     ColumnDefinitions="*,*"
                     ColumnSpacing="10"
-                    HeightRequest="450"
+                    HeightRequest="500"
                     HorizontalOptions="Center"
                     IsVisible="False"
-                    RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                    RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                     RowSpacing="10"
                     WidthRequest="420">
-
                     <Label
                         Grid.Row="0"
                         Grid.ColumnSpan="2"
@@ -772,90 +711,90 @@
                         HorizontalTextAlignment="Center"
                         Text="INFORMATIONS"
                         TextColor="#FFBD59" />
-
                     <Button
                         Grid.Row="1"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="3"
+                        BackgroundColor="Transparent"
                         Clicked="OnAboutUsClicked"
-                        CornerRadius="20"
                         FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="20"
                         HorizontalOptions="Center"
                         Text="ABOUT US"
-                        WidthRequest="300" />
-
+                        TextColor="#ffbd59" />
                     <Button
                         Grid.Row="2"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="3"
+                        BackgroundColor="Transparent"
                         Clicked="OnContactUsClicked"
-                        CornerRadius="20"
                         FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="20"
                         HorizontalOptions="Center"
                         Text="CONTACT US"
-                        WidthRequest="300" />
-
+                        TextColor="#ffbd59" />
                     <Button
                         Grid.Row="3"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="3"
+                        BackgroundColor="Transparent"
                         Clicked="OnPrivacyClicked"
-                        CornerRadius="20"
                         FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="20"
                         HorizontalOptions="Center"
                         Text="PRIVACY POLICY"
-                        WidthRequest="300" />
-
+                        TextColor="#ffbd59" />
                     <Button
                         Grid.Row="4"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="3"
+                        BackgroundColor="Transparent"
                         Clicked="OnTermsAndConditionsClicked"
-                        CornerRadius="20"
                         FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="20"
                         HorizontalOptions="Center"
                         Text="TERMS AND CONDITIONS"
-                        WidthRequest="300" />
-
+                        TextColor="#ffbd59" />
                     <Button
                         Grid.Row="5"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="3"
-                        Clicked="OnOurTeamClicked"
-                        CornerRadius="20"
+                        BackgroundColor="Transparent"
+                        Clicked="OnAccessibilityClicked"
                         FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="20"
                         HorizontalOptions="Center"
-                        Text="OUR TEAM"
-                        WidthRequest="300" />
-
+                        Text="ACCESSIBILITY"
+                        TextColor="#ffbd59" />
                     <Button
                         Grid.Row="6"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        BackgroundColor="Orange"
-                        BorderColor="White"
-                        BorderWidth="3"
-                        Clicked="OnHomeClicked"
-                        CornerRadius="20"
+                        BackgroundColor="Transparent"
+                        Clicked="OnOurTeamClicked"
                         FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Text="OUR TEAM"
+                        TextColor="#ffbd59" />
+                    <Button
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Transparent"
+                        Clicked="OnHomeClicked"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="20"
                         HorizontalOptions="Center"
                         Text="BACK TO TOP"
-                        WidthRequest="300" />
+                        TextColor="#ffbd59" />
                 </Grid>
             </VerticalStackLayout>
         </ScrollView>

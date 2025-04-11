@@ -7,8 +7,6 @@
     NavigationPage.HasNavigationBar="False">
     <ScrollView BackgroundColor="#ddd7c4">
         <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
-
-            <!--  Back Button  -->
             <Button
                 BackgroundColor="Transparent"
                 Clicked="OnBackButtonClicked"
@@ -18,69 +16,69 @@
                 Text="←"
                 TextColor="Black"
                 VerticalOptions="Center" />
-
-            <!--  Header Section  -->
             <Grid
-                ColumnDefinitions="Auto,Auto,Auto,Auto,Auto"
-                ColumnSpacing="{OnPlatform Android=10,
-                                           Default=20}"
+                ColumnDefinitions="Auto,Auto,Auto"
+                ColumnSpacing="10"
                 HorizontalOptions="Center">
                 <Label
                     Grid.Column="0"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="OUR"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Label
                     Grid.Column="1"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="TEAM"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Image
-                    Grid.Column="4"
+                    Grid.Column="2"
                     Aspect="AspectFill"
-                    HeightRequest="{OnPlatform Android=80,
-                                               Default=200}"
+                    HeightRequest="{OnIdiom Phone=50,
+                                            Desktop=100}"
                     Source="newlogo.png"
-                    WidthRequest="{OnPlatform Android=80,
-                                              Default=200}" />
+                    VerticalOptions="Start"
+                    WidthRequest="{OnIdiom Phone=50,
+                                           Desktop=100}" />
             </Grid>
             <Label
                 FontAttributes="Bold"
                 FontFamily="InstrumentSerif"
-                FontSize="30"
+                FontSize="{OnIdiom Phone=20,
+                                   Desktop=30}"
                 HorizontalOptions="Center"
                 Text="(LAST   UPDATED:   APRIL   1   2025)"
-                TextColor="Orange" />
+                TextColor="Black" />
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="20"
+                    FontSize="{OnIdiom Phone=20,
+                                       Desktop=30}"
                     HorizontalTextAlignment="Center"
                     Text="At Shuatik, our team is dedicated to delivering high-quality food products and an exceptional digital experience. We are passionate about innovation, accessibility, and customer satisfaction. Meet the people behind Shuatik:"
                     TextColor="#ffbd59" />
             </Frame>
             <Image
                 Aspect="AspectFill"
-                HeightRequest="{OnPlatform Android=350,
-                                           Default=700}"
+                HeightRequest="{OnIdiom Phone=350,
+                                        Desktop=900}"
                 Source="ourteam.jpg"
-                WidthRequest="{OnPlatform Android=350,
-                                          Default=700}" />
+                WidthRequest="{OnIdiom Phone=350,
+                                       Desktop=900}" />
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -88,8 +86,8 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="{OnPlatform Android=30,
-                                              Default=60}"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=60}"
                         HorizontalTextAlignment="Center"
                         Text="Founders and Leadership"
                         TextColor="#ffbd59" />
@@ -101,8 +99,8 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="{OnPlatform Android=30,
-                                              Default=50}"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=50}"
                         HorizontalTextAlignment="Center"
                         Text="HEIDEN   -   CEO"
                         TextColor="#ffbd59" />
@@ -114,8 +112,8 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="{OnPlatform Android=30,
-                                              Default=50}"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=50}"
                         HorizontalTextAlignment="Center"
                         Text="RHIAN   -   CO-CEO"
                         TextColor="#ffbd59" />
@@ -139,7 +137,7 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="20"
+                        FontSize="30"
                         HorizontalTextAlignment="Center"
                         Text="Our development team ensures that Shuatik runs smoothly on both desktop and mobile. From UI/UX design to backend services, this team makes sure our web app is efficient and user-friendly."
                         TextColor="#ffbd59" />
@@ -207,12 +205,11 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="50"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Development and Design Team"
                         TextColor="#ffbd59" />
                     <Label
-                        FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
                         FontSize="20"
                         HorizontalTextAlignment="Center"
@@ -226,28 +223,28 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="KIAN"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Lead Developer"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Frontend Developer"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Backend Developer"
                         TextColor="#ffbd59" />
@@ -259,35 +256,35 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="CHLOE"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Co-Lead Developer"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Frontend Developer"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Backend Developer"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="UI HEAD DESIGNER"
                         TextColor="#ffbd59" />
@@ -299,14 +296,14 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="HAYDEN"
                         TextColor="#ffbd59" />
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="20"
                         HorizontalTextAlignment="Center"
                         Text="Frontend Developer"
                         TextColor="#ffbd59" />

@@ -1,21 +1,18 @@
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Text.RegularExpressions;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;
 
 namespace Products.Pages
 {
     public partial class LogInLogOutPage : ContentPage
     {
-        // Dictionary to store registered users (temporary storage)
-        private Dictionary<string, (string Password, string Email, string PhoneNumber)> registeredUsers = new();
-
         public LogInLogOutPage()
         {
             InitializeComponent();
+            AppState.TermsAccepted = false;
         }
 
-        // Button hover effect (optional UI improvement)
         private void OnPointerEntered3(object sender, PointerEventArgs e)
         {
             if (sender is Button button)
@@ -32,32 +29,31 @@ namespace Products.Pages
             }
         }
 
-        // Login function
+        // ✅ LOGIN FUNCTION
         private async void OnLogin1Clicked(object sender, EventArgs e)
         {
-            string username = usernameEntry.Text;
-            string password = passwordEntry.Text;
+            string username = UsernameEntry.Text;  // Use capital U
+            string password = PasswordEntry.Text;  // Use capital P
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                await DisplayAlert("Login Failed", "Please enter both username and password", "OK");
+                await DisplayAlert("Login Failed", "Please enter both username and password.", "OK");
                 return;
             }
 
-            if (registeredUsers.ContainsKey(username) && registeredUsers[username].Password == password)
-            {
-                string email = registeredUsers[username].Email;
-                string phoneNumber = registeredUsers[username].PhoneNumber;
+            string storedPassword = Preferences.Get($"User_{username}_Password", null);
 
-                // Save login state and user details
+            if (storedPassword != null && storedPassword == password)
+            {
+                string email = Preferences.Get($"User_{username}_Email", "");
+                string phone = Preferences.Get($"User_{username}_Phone", "");
+
                 Preferences.Set("IsLoggedIn", true);
                 Preferences.Set("LoggedInUser", username);
                 Preferences.Set("LoggedInEmail", email);
-                Preferences.Set("LoggedInPhone", phoneNumber);
+                Preferences.Set("LoggedInPhone", phone);
 
                 await DisplayAlert("Login Successful", $"Welcome, {username}!", "OK");
-
-                // Navigate to MyAccountPage
                 await Navigation.PushAsync(new ProductsPage());
             }
             else
@@ -66,18 +62,24 @@ namespace Products.Pages
             }
         }
 
-        // Sign up function
+        // ✅ SIGN-UP FUNCTION
         private async void OnLogin2Clicked(object sender, EventArgs e)
         {
+            if (!AppState.TermsAccepted)
+            {
+                await DisplayAlert("Terms Required", "You must accept the terms and conditions.", "OK");
+                return;
+            }
+
             string username = usernameEntry.Text;
             string password = passwordEntry.Text;
             string email = emailEntry.Text;
-            string phoneNumber = phoneNumberEntry.Text;
+            string phone = phoneNumberEntry.Text;
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) ||
-                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(phoneNumber))
+                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(phone))
             {
-                await DisplayAlert("Error", "Please fill all fields", "OK");
+                await DisplayAlert("Error", "Please fill in all fields.", "OK");
                 return;
             }
 
@@ -87,31 +89,32 @@ namespace Products.Pages
                 return;
             }
 
-            // Validate phone number (digits only)
-            if (!Regex.IsMatch(phoneNumber, @"^\d+$"))
+            if (!Regex.IsMatch(phone, @"^\d+$"))
             {
                 await DisplayAlert("Error", "Phone number must contain only numbers.", "OK");
                 return;
             }
 
-            if (registeredUsers.ContainsKey(username))
+            // Check if user already exists
+            string existingUser = Preferences.Get($"User_{username}_Password", null);
+            if (existingUser != null)
             {
-                await DisplayAlert("Error", "Username already exists. Try another one.", "OK");
+                await DisplayAlert("Error", "Username already exists. Try a different one.", "OK");
                 return;
             }
 
-            // Store user details
-            registeredUsers[username] = (password, email, phoneNumber);
+            // Save user data
+            Preferences.Set($"User_{username}_Password", password);
+            Preferences.Set($"User_{username}_Email", email);
+            Preferences.Set($"User_{username}_Phone", phone);
+
             await DisplayAlert("Sign Up Successful", "You can now log in.", "OK");
 
-            // Redirect user to login page
             LogIn.IsVisible = true;
             SignIn.IsVisible = false;
         }
 
-
-
-        // Switch to sign-up page
+        // Switch to sign-up view
         private void OnSignUpClicked(object sender, EventArgs e)
         {
             LogIn.IsVisible = false;
@@ -119,12 +122,18 @@ namespace Products.Pages
             SignIn.ForceLayout();
         }
 
-        // Switch back to login page
+        // Switch back to login view
         private void OnBackToLoginClicked(object sender, EventArgs e)
         {
             LogIn.IsVisible = true;
             SignIn.IsVisible = false;
             LogIn.ForceLayout();
+        }
+
+        // Navigate to Terms and Conditions Page
+        private async void OnViewTermsClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TermsAndConditionsPage("LogInLogOutPage"));
         }
     }
 }

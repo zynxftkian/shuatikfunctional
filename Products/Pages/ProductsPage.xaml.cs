@@ -4,6 +4,8 @@ using Microsoft.Maui.Devices;
 using Microsoft.Maui.Graphics.Text;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
+using Products;
+
 
 
 namespace Products
@@ -271,6 +273,10 @@ namespace Products
         }
         private async void OnLogOutClicked(object sender, EventArgs e)
         {
+
+            AppState.TermsAccepted = false;
+            await Navigation.PushAsync(new LogInLogOutPage());
+
             MyAccountPage.ClearUserDetails();
             Preferences.Remove("IsLoggedIn");
             Preferences.Remove("LoggedInUser");
@@ -300,7 +306,7 @@ namespace Products
         }
         private async void OnTermsAndConditionsClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TermsAndConditionsPage());
+            await Navigation.PushAsync(new TermsAndConditionsPage("HomePage"));
         }
         private async void OnAccessibilityClicked(object sender, EventArgs e)
         {

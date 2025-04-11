@@ -7,8 +7,6 @@
     NavigationPage.HasNavigationBar="False">
     <ScrollView BackgroundColor="#ddd7c4">
         <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
-
-            <!--  Back Button  -->
             <Button
                 BackgroundColor="Transparent"
                 Clicked="OnBackButtonClicked"
@@ -18,61 +16,62 @@
                 Text="←"
                 TextColor="Black"
                 VerticalOptions="Center" />
-
-            <!--  Header Section  -->
             <Grid
-                ColumnDefinitions="Auto,Auto,Auto,Auto,Auto"
-                ColumnSpacing="20"
+                ColumnDefinitions="Auto,Auto,Auto"
+                ColumnSpacing="10"
                 HorizontalOptions="Center">
                 <Label
                     Grid.Column="0"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="ACCESSIBILITY"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Label
                     Grid.Column="1"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="OF"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Image
-                    Grid.Column="4"
+                    Grid.Column="2"
                     Aspect="AspectFill"
-                    HeightRequest="{OnPlatform Android=80,
-                                               Default=200}"
+                    HeightRequest="{OnIdiom Phone=50,
+                                            Desktop=100}"
                     Source="newlogo.png"
-                    WidthRequest="{OnPlatform Android=80,
-                                              Default=200}" />
+                    VerticalOptions="Start"
+                    WidthRequest="{OnIdiom Phone=50,
+                                           Desktop=100}" />
             </Grid>
             <Label
                 FontAttributes="Bold"
                 FontFamily="InstrumentSerif"
-                FontSize="30"
+                FontSize="{OnIdiom Phone=20,
+                                   Desktop=30}"
                 HorizontalOptions="Center"
                 Text="(LAST   UPDATED:   APRIL   1   2025)"
-                TextColor="Orange" />
+                TextColor="Black" />
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="20"
+                    FontSize="{OnIdiom Phone=20,
+                                       Desktop=30}"
                     HorizontalTextAlignment="Center"
                     Text="Shuatik is committed to ensuring digital accessibility for all users, including individuals with disabilities. We strive to make our web application accessible and user-friendly across both desktop and mobile devices."
                     TextColor="#ffbd59" />
             </Frame>
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -80,35 +79,46 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="Accessibility Features"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Screen Reader Compatibility   –   The App is designed to work with popular screen readers for users with visual impairments."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• High Contrast Mode   –   Support for high-contrast settings to improve readability."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Keyboard Navigation   –   Users can navigate the App using a keyboard without requiring a mouse."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Text Scaling   –   Adjustable text sizes to accommodate different visual needs."
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         Text="• Alternative Text   –   Images and non-text elements include descriptions for better accessibility."
                         TextColor="#ffbd59" />
                 </VerticalStackLayout>
             </Frame>
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -116,20 +126,23 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="Ongoing Improvements"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         HorizontalTextAlignment="Center"
                         Text="We are continuously working to enhance the accessibility of our App. Our team follows best practices, including compliance with WCAG (Web Content Accessibility Guidelines) standards, to ensure a more inclusive experience."
                         TextColor="#ffbd59" />
                 </VerticalStackLayout>
             </Frame>
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -137,20 +150,23 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="Third - Party Content"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         HorizontalTextAlignment="Center"
                         Text="While we strive to make all areas of the App accessible, some third-party content or integrations may not fully meet accessibility standards. We encourage users to report any accessibility concerns they encounter."
                         TextColor="#ffbd59" />
                 </VerticalStackLayout>
             </Frame>
             <Frame
-                Margin="{OnPlatform Android='10,0,10,0',
-                                    Default='100,0,100,0'}"
+                Margin="{OnIdiom Phone='10,0,10,0',
+                                 Desktop='100,0,100,0'}"
                 Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59">
@@ -158,22 +174,25 @@
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="Feedback and Support"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=20}"
                         HorizontalTextAlignment="Center"
                         Text="If you experience any accessibility issues or have suggestions for improvement, please contact us at. We value your feedback and are dedicated to making Shuatik as accessible as possible for all users.  Thank you for using Shuatik!"
                         TextColor="#ffbd59" />
                     <Button
                         BackgroundColor="Orange"
                         Clicked="OnContactUsClicked"
+                        FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
                         Text="CONTACT US"
-                        TextColor="Black"
-                        WidthRequest="200" />
+                        TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>
         </VerticalStackLayout>

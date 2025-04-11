@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="About Us"
     NavigationPage.HasNavigationBar="False">
-
     <ScrollView BackgroundColor="#ddd7c4">
         <VerticalStackLayout Padding="0">
             <Button
@@ -18,63 +17,58 @@
                 TextColor="Black"
                 VerticalOptions="Center" />
             <Grid
-                ColumnDefinitions="Auto, Auto, Auto, Auto, Auto"
-                ColumnSpacing="20"
+                ColumnDefinitions="Auto, Auto, Auto, Auto"
+                ColumnSpacing="10"
                 HorizontalOptions="Center">
                 <Label
                     Grid.Column="0"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     HorizontalTextAlignment="Center"
                     Text="ABOUT"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Image
                     Grid.Column="1"
                     Aspect="AspectFill"
-                    HeightRequest="{OnPlatform Android=80,
-                                               Default=200}"
+                    HeightRequest="{OnIdiom Phone=50,
+                                            Desktop=100}"
                     Source="newlogo.png"
-                    WidthRequest="{OnPlatform Android=80,
-                                              Default=200}" />
+                    VerticalOptions="Start"
+                    WidthRequest="{OnIdiom Phone=50,
+                                           Desktop=100}" />
                 <Label
                     Grid.Column="2"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="AND"
-                    TextColor="Orange" />
+                    TextColor="Black" />
                 <Label
                     Grid.Column="3"
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=100}"
+                    FontSize="{OnIdiom Phone=30,
+                                       Desktop=60}"
                     Text="US"
-                    TextColor="Orange" />
+                    TextColor="Black" />
             </Grid>
-
-            <!--  Description  -->
             <Label
                 Margin="10,5"
                 FontFamily="InstrumentSerif"
-                FontSize="{OnPlatform Android=20,
-                                      Default=40}"
+                FontSize="{OnIdiom Phone=20,
+                                   Desktop=30}"
                 HorizontalTextAlignment="Center"
                 Text="Shuatik was derived from Squash plus Latik, the combination of squash and latik offers a unique culinary fusion. Reflecting the combination of squash and latik in the dish, the name accurately represents the ingredients. The toasted nutty flavor of the coconut curds sprinkled on top for added flavor and texture that complements the savory squash pasta sauce that enhance the overall eating experience. The term Shuatik may also relate to a symbolic meaning derived from the Sanskrit word Svastika, a significant symbol in Hinduism that signifies luck. This dish is not only delicious but also bring good fortune and prosperity for the costumers and the business. "
-                TextColor="Orange" />
-
-            <!--  Section Container  -->
+                TextColor="Black" />
             <Grid
                 x:Name="desktopVMC"
                 Padding="50"
                 ColumnDefinitions="*,*,*"
                 ColumnSpacing="50"
                 IsVisible="True">
-
-                <!--  Vision  -->
                 <Frame
                     Grid.Column="0"
                     BackgroundColor="#4D0B0B"
@@ -95,8 +89,6 @@
                             TextColor="#ffbd59" />
                     </VerticalStackLayout>
                 </Frame>
-
-                <!--  Mission  -->
                 <Frame
                     Grid.Column="1"
                     BackgroundColor="#4D0B0B"
@@ -117,8 +109,6 @@
                             TextColor="#ffbd59" />
                     </VerticalStackLayout>
                 </Frame>
-
-                <!--  Core Values  -->
                 <Frame
                     Grid.Column="2"
                     BackgroundColor="#4D0B0B"
@@ -163,15 +153,13 @@
                             TextColor="#ffbd59" />
                     </VerticalStackLayout>
                 </Frame>
-
             </Grid>
-
             <Grid
                 x:Name="mobileVMC"
                 Padding="10"
                 IsVisible="False"
                 RowDefinitions="*, *, *"
-                RowSpacing="20">
+                RowSpacing="10">
                 <Frame
                     Grid.Row="0"
                     BackgroundColor="#531414"
@@ -180,13 +168,13 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="InstrumentSerif"
-                            FontSize="30"
+                            FontSize="20"
                             HorizontalTextAlignment="Center"
                             Text="VISION"
                             TextColor="#ffdb59" />
                         <Label
                             FontFamily="InstrumentSerif"
-                            FontSize="20"
+                            FontSize="10"
                             HorizontalTextAlignment="Center"
                             Text="The business aims to create a unique culinary experience that connects culture by offering a delightful twist on classic pasta with indulgence and caramelized goodness of latik on top "
                             TextColor="#ffbd59" />
@@ -200,13 +188,13 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="InstrumentSerif"
-                            FontSize="30"
+                            FontSize="20"
                             HorizontalTextAlignment="Center"
                             Text="MISSION"
                             TextColor="#ffbd59" />
                         <Label
                             FontFamily="InstrumentSerif"
-                            FontSize="20"
+                            FontSize="10"
                             HorizontalTextAlignment="Center"
                             Text="Shuatik aims to create a unique and delightful culinary experience with squash pasta topped with latik by revolutionizing a dish which embraces our Filipino heritage by using latik as the main garnish of the pasta. Our mission is to promote a healthy option in one plate by fostering a community that celebrates both flavor and nutrition while fulfilling the desires of our cherished customers and ensuring their satisfaction with every serving. "
                             TextColor="#ffbd59" />
@@ -220,44 +208,43 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="InstrumentSerif"
-                            FontSize="30"
+                            FontSize="20"
                             HorizontalTextAlignment="Center"
                             Text="CORE VALUES"
                             TextColor="#ffbd59" />
                         <Label
                             FontFamily="InstrumentSerif"
-                            FontSize="20"
+                            FontSize="10"
                             HorizontalTextAlignment="Start"
                             Text="QUALITY IS PRIORITY - our ingredients ensures that every bite of our savory dish delivers exceptional taste and quality."
                             TextColor="#ffbd59" />
                         <Label
                             FontFamily="InstrumentSerif"
-                            FontSize="20"
+                            FontSize="10"
                             HorizontalTextAlignment="Start"
                             Text="CUSTOMER SERVICE - we strive to provide excellent service and delicious food that brings joy and satisfaction to every customer."
                             TextColor="#ffbd59" />
                         <Label
                             FontFamily="InstrumentSerif"
-                            FontSize="20"
+                            FontSize="10"
                             HorizontalTextAlignment="Start"
                             Text="CREATIVITY AND PASSION - every product is made with love for cooking and embraces creativity in flavors and design."
                             TextColor="#ffbd59" />
                         <Label
                             FontFamily="InstrumentSerif"
-                            FontSize="20"
+                            FontSize="10"
                             HorizontalTextAlignment="Start"
                             Text="CONSISTENCY - our customers can always expect the same great taste, freshness, and quality in every order."
                             TextColor="#ffbd59" />
                         <Label
                             FontFamily="InstrumentSerif"
-                            FontSize="20"
+                            FontSize="10"
                             HorizontalTextAlignment="Start"
                             Text="ECONOMICAL - we make conscious choices for every decision we make, sparing our budget for ingredients and other things needed"
                             TextColor="#ffbd59" />
                     </VerticalStackLayout>
                 </Frame>
             </Grid>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

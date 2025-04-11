@@ -12,9 +12,12 @@ public partial class OrdersPage : ContentPage, INotifyPropertyChanged
 
     private bool isSidebarOpen = false;
 
+    public string SelectedPaymentMethod { get; set; }
+
     public OrdersPage()
     {
         InitializeComponent();
+
         BindingContext = this;
         Orders.CollectionChanged += (s, e) => OnPropertyChanged(nameof(TotalAmount));
 
@@ -104,7 +107,8 @@ public partial class OrdersPage : ContentPage, INotifyPropertyChanged
     }
     private async void OnCheckOutClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new OrdersSummaryPage());
+        var ordersSummaryPage = new OrdersSummaryPage(SelectedPaymentMethod);
+        await Navigation.PushAsync(ordersSummaryPage);
     }
     private void OnPointerEntered(object sender, PointerEventArgs e)
     {

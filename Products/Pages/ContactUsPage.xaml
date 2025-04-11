@@ -7,12 +7,9 @@
     NavigationPage.HasNavigationBar="False">
 
     <VerticalStackLayout
-        Padding="{OnPlatform Android='10,0,10,0',
-                             Default='100,0,100,0'}"
+        Padding="0"
         BackgroundColor="#ddd7c4"
         Spacing="10">
-
-        <!--  Back Button  -->
         <Button
             BackgroundColor="Transparent"
             Clicked="OnBackButtonClicked"
@@ -22,156 +19,141 @@
             Text="←"
             TextColor="Black"
             VerticalOptions="Center" />
-
-        <!--  Header Section  -->
         <Grid
             ColumnDefinitions="Auto, Auto, Auto, Auto"
-            ColumnSpacing="20"
+            ColumnSpacing="10"
             HorizontalOptions="Center">
             <Label
                 Grid.Column="0"
                 FontAttributes="Bold"
                 FontFamily="InstrumentSerif"
-                FontSize="{OnPlatform Android=30,
-                                      Default=70}"
+                FontSize="{OnIdiom Phone=30,
+                                   Desktop=60}"
                 HorizontalTextAlignment="Center"
                 Text="CONTACT"
-                TextColor="Orange" />
+                TextColor="Black" />
             <Image
                 Grid.Column="1"
                 Aspect="AspectFill"
-                HeightRequest="{OnPlatform Android=80,
-                                           Default=150}"
+                HeightRequest="{OnIdiom Phone=50,
+                                        Desktop=100}"
                 Source="newlogo.png"
-                WidthRequest="{OnPlatform Android=80,
-                                          Default=150}" />
+                VerticalOptions="Start"
+                WidthRequest="{OnIdiom Phone=50,
+                                       Desktop=100}" />
             <Label
                 Grid.Column="2"
                 FontAttributes="Bold"
                 FontFamily="InstrumentSerif"
-                FontSize="{OnPlatform Android=30,
-                                      Default=70}"
+                FontSize="{OnIdiom Phone=30,
+                                   Desktop=60}"
                 Text="AND"
-                TextColor="Orange" />
+                TextColor="Black" />
             <Label
                 Grid.Column="3"
                 FontAttributes="Bold"
                 FontFamily="InstrumentSerif"
-                FontSize="{OnPlatform Android=30,
-                                      Default=70}"
+                FontSize="{OnIdiom Phone=30,
+                                   Desktop=60}"
                 Text="US"
-                TextColor="Orange" />
+                TextColor="Black" />
         </Grid>
-
-        <!--  Facebook & Email Section  -->
-        <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
-            <!--  Facebook Frame  -->
+        <Grid
+            Padding="50"
+            ColumnDefinitions="*, *"
+            ColumnSpacing="10">
             <Frame
                 Grid.Column="0"
-                Padding="20"
+                Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59"
-                CornerRadius="15">
-                <VerticalStackLayout>
+                CornerRadius="20"
+                HeightRequest="{OnIdiom Phone=100,
+                                        Desktop=200}">
+                <VerticalStackLayout VerticalOptions="Center">
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="{OnPlatform Android=30,
-                                              Default=50}"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=60}"
                         HorizontalTextAlignment="Center"
                         Text="FACEBOOK"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
-                        FontSize="{OnPlatform Android=20,
-                                              Default=40}"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="SHUATIK"
                         TextColor="#FFBD59" />
                 </VerticalStackLayout>
             </Frame>
-
-            <!--  Email Frame  -->
             <Frame
                 Grid.Column="1"
-                Padding="20"
+                Padding="10"
                 BackgroundColor="#541414"
                 BorderColor="#ffbd59"
-                CornerRadius="15">
-                <VerticalStackLayout>
+                CornerRadius="20"
+                HeightRequest="{OnIdiom Phone=100,
+                                        Desktop=200}">
+                <VerticalStackLayout VerticalOptions="Center">
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
-                        FontSize="{OnPlatform Android=30,
-                                              Default=50}"
+                        FontSize="{OnIdiom Phone=20,
+                                           Desktop=60}"
                         HorizontalTextAlignment="Center"
                         Text="EMAIL"
                         TextColor="#ffbd59" />
                     <Label
                         FontFamily="InstrumentSerif"
-                        FontSize="{OnPlatform Android=20,
-                                              Default=40}"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
                         Text="shuatiksarap@gmail.com"
                         TextColor="#FFBD59" />
                 </VerticalStackLayout>
             </Frame>
         </Grid>
-
-        <!--  Feedback Section  -->
         <Frame
-            Padding="{OnPlatform Android=10,
-                                 Default=50}"
             BackgroundColor="#541414"
             BorderColor="#ffbd59"
             CornerRadius="15"
-            HeightRequest="{OnPlatform Android=380,
-                                       Default=450}">
+            HeightRequest="{OnIdiom Phone=300,
+                                    Desktop=450}">
 
-            <VerticalStackLayout Spacing="{OnPlatform Android=10, Default=20}" VerticalOptions="FillAndExpand">
+            <VerticalStackLayout Spacing="{OnIdiom Phone=0, Desktop=20}">
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=30,
-                                          Default=50}"
+                    FontSize="{OnIdiom Phone=20,
+                                       Desktop=60}"
                     HorizontalTextAlignment="Center"
                     Text="FEEDBACK"
                     TextColor="#ffbd59" />
 
-                <ScrollView HeightRequest="120">
+                <ScrollView HeightRequest="150">
                     <Entry
                         BackgroundColor="Transparent"
                         FontFamily="InstrumentSerif"
-                        FontSize="30"
+                        FontSize="{OnIdiom Phone=10,
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
-                        MaxLength="250"
+                        MaxLength="300"
                         Placeholder="Enter your feedback here..."
                         PlaceholderColor="#ffbd59"
                         TextColor="#ffbd59" />
                 </ScrollView>
-
-                <BoxView BackgroundColor="Transparent" HeightRequest="{OnPlatform Android=10, Default=40}" />
-                <!--  Spacer to push the button down  -->
-
+                <BoxView BackgroundColor="Transparent" HeightRequest="{OnIdiom Phone=10, Desktop=40}" />
                 <Button
                     BackgroundColor="#ffbd59"
                     CornerRadius="10"
+                    FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
-                    FontSize="{OnPlatform Android=20,
-                                          Default=30}"
-                    HeightRequest="{OnPlatform Android=40,
-                                               Default=60}"
                     HorizontalOptions="Center"
                     Text="SEND"
-                    TextColor="#541414"
-                    VerticalOptions="EndAndExpand"
-                    WidthRequest="{OnPlatform Android=100,
-                                              Default=200}" />
+                    TextColor="#541414" />
             </VerticalStackLayout>
         </Frame>
-
-
-
     </VerticalStackLayout>
-
 </ContentPage>
