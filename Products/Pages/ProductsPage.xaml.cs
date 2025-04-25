@@ -5,6 +5,7 @@ using Microsoft.Maui.Graphics.Text;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
 using Products;
+using Microsoft.Maui.Platform;
 
 
 
@@ -227,6 +228,9 @@ namespace Products
 
         private void OnScrollViewScrolled(object sender, ScrolledEventArgs e)
         {
+
+            backtotop.IsVisible = e.ScrollY > 100;
+
             double productsPosition = ProductsContainer.Y;
             double scrollY = e.ScrollY;
 
@@ -319,6 +323,11 @@ namespace Products
         private async void OnMyAccountClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MyAccountPage());
+        }
+        private async void OnBackToTopClicked(object sender, EventArgs e)
+        {
+            // Scroll to top smoothly
+            await ProductsScrollView.ScrollToAsync(0, 0, true);
         }
     }
 }

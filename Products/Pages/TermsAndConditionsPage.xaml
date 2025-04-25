@@ -6,413 +6,446 @@
     Title="TermsAndConditionsPage"
     NavigationPage.HasNavigationBar="False">
 
-    <ScrollView BackgroundColor="#ddd7c4">
-        <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
-            <Button
-                BackgroundColor="Transparent"
-                Clicked="OnBackButtonClicked"
-                CornerRadius="25"
-                FontSize="70"
-                HorizontalOptions="Start"
-                Text="←"
-                TextColor="Black"
-                VerticalOptions="Center" />
-            <Grid
-                ColumnDefinitions="Auto,Auto,Auto,Auto,Auto"
-                ColumnSpacing="10"
-                HorizontalOptions="Center">
-                <Label
-                    Grid.Column="0"
-                    FontAttributes="Bold"
-                    FontFamily="InstrumentSerif"
-                    FontSize="{OnIdiom Phone=30,
-                                       Desktop=60}"
-                    Text="TERMS"
-                    TextColor="Black" />
-                <Label
-                    Grid.Column="1"
-                    FontAttributes="Bold"
-                    FontFamily="InstrumentSerif"
-                    FontSize="{OnIdiom Phone=30,
-                                       Desktop=60}"
-                    Text="AND"
-                    TextColor="Black" />
-                <Label
-                    Grid.Column="2"
-                    FontAttributes="Bold"
-                    FontFamily="InstrumentSerif"
-                    FontSize="{OnIdiom Phone=30,
-                                       Desktop=60}"
-                    Text="CONDITIONS"
-                    TextColor="Black" />
-                <Label
-                    Grid.Column="3"
-                    FontAttributes="Bold"
-                    FontFamily="InstrumentSerif"
-                    FontSize="{OnIdiom Phone=30,
-                                       Desktop=60}"
-                    Text="OF"
-                    TextColor="Black" />
-                <Image
-                    Grid.Column="4"
-                    Aspect="AspectFill"
-                    HeightRequest="{OnIdiom Phone=50,
-                                            Desktop=100}"
-                    Source="newlogo.png"
-                    VerticalOptions="Start"
-                    WidthRequest="{OnIdiom Phone=50,
-                                           Desktop=100}" />
-            </Grid>
-            <Label
-                FontAttributes="Bold"
-                FontFamily="InstrumentSerif"
-                FontSize="{OnIdiom Phone=20,
-                                   Desktop=30}"
-                HorizontalOptions="Center"
-                Text="(LAST   UPDATED:   APRIL   1   2025)"
-                TextColor="Black" />
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
+    <Grid RowDefinitions="*">
+        <ScrollView
+            x:Name="ProductsScrollView"
+            Grid.Row="0"
+            BackgroundColor="#ddd7c4"
+            Scrolled="OnScrollViewScrolled">
+            <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
+                <Button
+                    BackgroundColor="Transparent"
+                    Clicked="OnBackButtonClicked"
+                    CornerRadius="25"
+                    FontSize="70"
+                    HorizontalOptions="Start"
+                    Text="←"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Grid
+                    ColumnDefinitions="Auto,Auto,Auto,Auto,Auto"
+                    ColumnSpacing="10"
+                    HorizontalOptions="Center">
+                    <Label
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=30,
+                                           Desktop=60}"
+                        Text="TERMS"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=30,
+                                           Desktop=60}"
+                        Text="AND"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=30,
+                                           Desktop=60}"
+                        Text="CONDITIONS"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="3"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=30,
+                                           Desktop=60}"
+                        Text="OF"
+                        TextColor="Black" />
+                    <Image
+                        Grid.Column="4"
+                        Aspect="AspectFill"
+                        HeightRequest="{OnIdiom Phone=50,
+                                                Desktop=100}"
+                        Source="newlogo.png"
+                        VerticalOptions="Start"
+                        WidthRequest="{OnIdiom Phone=50,
+                                               Desktop=100}" />
+                </Grid>
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
                     FontSize="{OnIdiom Phone=20,
                                        Desktop=30}"
-                    HorizontalTextAlignment="Center"
-                    Text="Welcome to Shuatik! These Terms and Conditions (Terms) govern your use of the Shuatik .NET MAUI application (the App), which allows users to order our exclusive food products. By accessing or using the App, you agree to be bound by these Terms. If you do not agree, please do not use the App."
-                    TextColor="#ffbd59" />
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
+                    HorizontalOptions="Center"
+                    Text="(LAST   UPDATED:   APRIL   1   2025)"
+                    TextColor="Black" />
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
                         FontSize="{OnIdiom Phone=20,
                                            Desktop=30}"
                         HorizontalTextAlignment="Center"
-                        Text="Acceptance of Terms"
+                        Text="Welcome to Shuatik! These Terms and Conditions (Terms) govern your use of the Shuatik .NET MAUI application (the App), which allows users to order our exclusive food products. By accessing or using the App, you agree to be bound by these Terms. If you do not agree, please do not use the App."
                         TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        HorizontalTextAlignment="Center"
-                        Text="By downloading, installing, or using the App, you acknowledge that you have read, understood, and agree to abide by these Terms."
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Use of the App"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• You must be at least 13 years old to use the App."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• You agree to use the App only for lawful purposes and in compliance with all applicable laws and regulations."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• You may not misuse, exploit, or interfere with the functionality of the App."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• The App facilitates ordering exclusively from our limited selection of three food products, and you are responsible for verifying your order details before submission."
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Orders and Payments"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• By placing an order through the App, you agree to pay the total amount displayed at checkout, including taxes and delivery fees."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• Payment must be made using the available payment options in the App."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• Orders may not be canceled or modified after they have been confirmed."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• We strive to provide timely and accurate order fulfillment, but we are not liable for delays due to unforeseen circumstances."
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Intellectual Property"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• All content, trademarks, logos, and intellectual property related to Shuatik are owned by us or our licensors."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• You may not copy, distribute, modify, or create derivative works from any part of the App without our prior written consent."
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Privacy Policy"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        HorizontalTextAlignment="Center"
-                        Text="Your use of the App is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information."
-                        TextColor="#ffbd59" />
-                    <Button
-                        BackgroundColor="Orange"
-                        Clicked="OnPrivacyClicked"
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        Text="PRIVACY POLICY"
-                        TextColor="Black" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Limitation of Liability"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• The App is provided as is without warranties of any kind."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• We shall not be liable for any damages arising from your use of the App, including but not limited to direct, indirect, incidental, or consequential damages."
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        Text="• We are responsible only for the quality, preparation, and delivery of our three food products. "
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Modifications to Terms"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        HorizontalTextAlignment="Center"
-                        Text="We reserve the right to modify these Terms at any time. Continued use of the App after changes are made constitutes acceptance of the updated Terms."
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Termination"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        HorizontalTextAlignment="Center"
-                        Text="We may terminate or suspend your access to the App at any time if you violate these Terms."
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=30}"
-                        HorizontalTextAlignment="Center"
-                        Text="Contact Information"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=10,
-                                           Desktop=20}"
-                        HorizontalTextAlignment="Center"
-                        Text="If you have any questions about these Terms, please contact us at."
-                        TextColor="#ffbd59" />
-                    <Button
-                        BackgroundColor="Orange"
-                        Clicked="OnContactUsClicked"
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        Text="CONTACT US"
-                        TextColor="Black" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
-                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                        <CheckBox
-                            x:Name="TermsCheckbox"
-                            CheckedChanged="OnCheckboxChanged"
-                            Color="#ffbd59" />
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
                         <Label
-                            x:Name="tacpdesktop"
                             FontAttributes="Bold"
                             FontFamily="InstrumentSerif"
-                            FontSize="30"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
                             HorizontalTextAlignment="Center"
-                            IsVisible="True"
-                            Text="I  Agree  To  The  Terms  And  Conditions  Of  SHUATIK"
-                            TextColor="#ffbd59"
-                            VerticalTextAlignment="Center" />
-                        <VerticalStackLayout
-                            x:Name="tacpmobile"
-                            HorizontalOptions="Center"
-                            IsVisible="False"
-                            Spacing="10">
+                            Text="Acceptance of Terms"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            HorizontalTextAlignment="Center"
+                            Text="By downloading, installing, or using the App, you acknowledge that you have read, understood, and agree to abide by these Terms."
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Use of the App"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• You must be at least 13 years old to use the App."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• You agree to use the App only for lawful purposes and in compliance with all applicable laws and regulations."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• You may not misuse, exploit, or interfere with the functionality of the App."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• The App facilitates ordering exclusively from our limited selection of three food products, and you are responsible for verifying your order details before submission."
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Orders and Payments"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• By placing an order through the App, you agree to pay the total amount displayed at checkout, including taxes and delivery fees."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• Payment must be made using the available payment options in the App."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• Orders may not be canceled or modified after they have been confirmed."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• We strive to provide timely and accurate order fulfillment, but we are not liable for delays due to unforeseen circumstances."
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Intellectual Property"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• All content, trademarks, logos, and intellectual property related to Shuatik are owned by us or our licensors."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• You may not copy, distribute, modify, or create derivative works from any part of the App without our prior written consent."
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Privacy Policy"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            HorizontalTextAlignment="Center"
+                            Text="Your use of the App is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information."
+                            TextColor="#ffbd59" />
+                        <Button
+                            BackgroundColor="Orange"
+                            Clicked="OnPrivacyClicked"
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            Text="PRIVACY POLICY"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Limitation of Liability"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• The App is provided as is without warranties of any kind."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• We shall not be liable for any damages arising from your use of the App, including but not limited to direct, indirect, incidental, or consequential damages."
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            Text="• We are responsible only for the quality, preparation, and delivery of our three food products. "
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Modifications to Terms"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            HorizontalTextAlignment="Center"
+                            Text="We reserve the right to modify these Terms at any time. Continued use of the App after changes are made constitutes acceptance of the updated Terms."
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Termination"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            HorizontalTextAlignment="Center"
+                            Text="We may terminate or suspend your access to the App at any time if you violate these Terms."
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=30}"
+                            HorizontalTextAlignment="Center"
+                            Text="Contact Information"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=10,
+                                               Desktop=20}"
+                            HorizontalTextAlignment="Center"
+                            Text="If you have any questions about these Terms, please contact us at."
+                            TextColor="#ffbd59" />
+                        <Button
+                            BackgroundColor="Orange"
+                            Clicked="OnContactUsClicked"
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            Text="CONTACT US"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                            <CheckBox
+                                x:Name="TermsCheckbox"
+                                CheckedChanged="OnCheckboxChanged"
+                                Color="#ffbd59" />
                             <Label
+                                x:Name="tacpdesktop"
                                 FontAttributes="Bold"
                                 FontFamily="InstrumentSerif"
-                                FontSize="20"
+                                FontSize="30"
                                 HorizontalTextAlignment="Center"
-                                Text="I  Agree  To  The  Terms  And"
+                                IsVisible="True"
+                                Text="I  Agree  To  The  Terms  And  Conditions  Of  SHUATIK"
                                 TextColor="#ffbd59"
                                 VerticalTextAlignment="Center" />
-                            <Label
-                                FontAttributes="Bold"
-                                FontFamily="InstrumentSerif"
-                                FontSize="20"
-                                HorizontalTextAlignment="Center"
-                                Text="Conditions  Of  SHUATIK"
-                                TextColor="#ffbd59"
-                                VerticalTextAlignment="Center" />
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
-            </Frame>
-        </VerticalStackLayout>
-    </ScrollView>
+                            <VerticalStackLayout
+                                x:Name="tacpmobile"
+                                HorizontalOptions="Center"
+                                IsVisible="False"
+                                Spacing="10">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontFamily="InstrumentSerif"
+                                    FontSize="20"
+                                    HorizontalTextAlignment="Center"
+                                    Text="I  Agree  To  The  Terms  And"
+                                    TextColor="#ffbd59"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontFamily="InstrumentSerif"
+                                    FontSize="20"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Conditions  Of  SHUATIK"
+                                    TextColor="#ffbd59"
+                                    VerticalTextAlignment="Center" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+        <AbsoluteLayout
+            Grid.Row="0"
+            BackgroundColor="Transparent"
+            IsVisible="{OnIdiom Phone=true,
+                                Desktop=false,
+                                Tablet=false}"
+            ZIndex="1">
+
+            <Button
+                x:Name="backtotop"
+                Margin="20,0,20,80"
+                AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                BackgroundColor="Black"
+                BorderColor="White"
+                BorderWidth="3"
+                Clicked="OnBackToTopClicked"
+                CornerRadius="40"
+                FontAttributes="Bold"
+                FontSize="40"
+                HeightRequest="70"
+                IsVisible="False"
+                Opacity=".5"
+                Text="↑"
+                TextColor="White"
+                WidthRequest="70" />
+        </AbsoluteLayout>
+    </Grid>
 </ContentPage>

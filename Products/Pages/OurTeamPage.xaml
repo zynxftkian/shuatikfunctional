@@ -5,310 +5,343 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="OurTeamPage"
     NavigationPage.HasNavigationBar="False">
-    <ScrollView BackgroundColor="#ddd7c4">
-        <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
-            <Button
-                BackgroundColor="Transparent"
-                Clicked="OnBackButtonClicked"
-                CornerRadius="25"
-                FontSize="70"
-                HorizontalOptions="Start"
-                Text="←"
-                TextColor="Black"
-                VerticalOptions="Center" />
-            <Grid
-                ColumnDefinitions="Auto,Auto,Auto"
-                ColumnSpacing="10"
-                HorizontalOptions="Center">
-                <Label
-                    Grid.Column="0"
-                    FontAttributes="Bold"
-                    FontFamily="InstrumentSerif"
-                    FontSize="{OnIdiom Phone=30,
-                                       Desktop=60}"
-                    Text="OUR"
-                    TextColor="Black" />
-                <Label
-                    Grid.Column="1"
-                    FontAttributes="Bold"
-                    FontFamily="InstrumentSerif"
-                    FontSize="{OnIdiom Phone=30,
-                                       Desktop=60}"
-                    Text="TEAM"
-                    TextColor="Black" />
-                <Image
-                    Grid.Column="2"
-                    Aspect="AspectFill"
-                    HeightRequest="{OnIdiom Phone=50,
-                                            Desktop=100}"
-                    Source="newlogo.png"
-                    VerticalOptions="Start"
-                    WidthRequest="{OnIdiom Phone=50,
-                                           Desktop=100}" />
-            </Grid>
-            <Label
-                FontAttributes="Bold"
-                FontFamily="InstrumentSerif"
-                FontSize="{OnIdiom Phone=20,
-                                   Desktop=30}"
-                HorizontalOptions="Center"
-                Text="(LAST   UPDATED:   APRIL   1   2025)"
-                TextColor="Black" />
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
+    <Grid RowDefinitions="*">
+        <ScrollView
+            x:Name="ProductsScrollView"
+            Grid.Row="0"
+            BackgroundColor="#ddd7c4"
+            Scrolled="OnScrollViewScrolled">
+            <VerticalStackLayout Padding="0,0,0,30" Spacing="10">
+                <Button
+                    BackgroundColor="Transparent"
+                    Clicked="OnBackButtonClicked"
+                    CornerRadius="25"
+                    FontSize="70"
+                    HorizontalOptions="Start"
+                    Text="←"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Grid
+                    ColumnDefinitions="Auto,Auto,Auto"
+                    ColumnSpacing="10"
+                    HorizontalOptions="Center">
+                    <Label
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=30,
+                                           Desktop=60}"
+                        Text="OUR"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontFamily="InstrumentSerif"
+                        FontSize="{OnIdiom Phone=30,
+                                           Desktop=60}"
+                        Text="TEAM"
+                        TextColor="Black" />
+                    <Image
+                        Grid.Column="2"
+                        Aspect="AspectFill"
+                        HeightRequest="{OnIdiom Phone=50,
+                                                Desktop=100}"
+                        Source="newlogo.png"
+                        VerticalOptions="Start"
+                        WidthRequest="{OnIdiom Phone=50,
+                                               Desktop=100}" />
+                </Grid>
                 <Label
                     FontAttributes="Bold"
                     FontFamily="InstrumentSerif"
                     FontSize="{OnIdiom Phone=20,
                                        Desktop=30}"
-                    HorizontalTextAlignment="Center"
-                    Text="At Shuatik, our team is dedicated to delivering high-quality food products and an exceptional digital experience. We are passionate about innovation, accessibility, and customer satisfaction. Meet the people behind Shuatik:"
-                    TextColor="#ffbd59" />
-            </Frame>
-            <Image
-                Aspect="AspectFill"
-                HeightRequest="{OnIdiom Phone=350,
-                                        Desktop=900}"
-                Source="ourteam.jpg"
-                WidthRequest="{OnIdiom Phone=350,
-                                       Desktop=900}" />
-            <Frame
-                Margin="{OnIdiom Phone='10,0,10,0',
-                                 Desktop='100,0,100,0'}"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59">
-                <VerticalStackLayout Spacing="10">
+                    HorizontalOptions="Center"
+                    Text="(LAST   UPDATED:   APRIL   1   2025)"
+                    TextColor="Black" />
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
                     <Label
                         FontAttributes="Bold"
                         FontFamily="InstrumentSerif"
                         FontSize="{OnIdiom Phone=20,
-                                           Desktop=60}"
+                                           Desktop=30}"
                         HorizontalTextAlignment="Center"
-                        Text="Founders and Leadership"
+                        Text="At Shuatik, our team is dedicated to delivering high-quality food products and an exceptional digital experience. We are passionate about innovation, accessibility, and customer satisfaction. Meet the people behind Shuatik:"
                         TextColor="#ffbd59" />
-                    <Image
-                        Aspect="AspectFill"
-                        HeightRequest="300"
-                        Source="heiden.jpg"
-                        WidthRequest="300" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=50}"
-                        HorizontalTextAlignment="Center"
-                        Text="HEIDEN   -   CEO"
-                        TextColor="#ffbd59" />
-                    <Image
-                        Aspect="AspectFill"
-                        HeightRequest="300"
-                        Source="rhian.jpg"
-                        WidthRequest="300" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="{OnIdiom Phone=20,
-                                           Desktop=50}"
-                        HorizontalTextAlignment="Center"
-                        Text="RHIAN   -   CO-CEO"
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                x:Name="desktopUS"
-                Margin="100,0,100,0"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59"
-                IsVisible="True">
-                <VerticalStackLayout Padding="50,0,50,0" Spacing="50">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="60"
-                        HorizontalTextAlignment="Center"
-                        Text="Development and Design Team"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="30"
-                        HorizontalTextAlignment="Center"
-                        Text="Our development team ensures that Shuatik runs smoothly on both desktop and mobile. From UI/UX design to backend services, this team makes sure our web app is efficient and user-friendly."
-                        TextColor="#ffbd59" />
-                    <HorizontalStackLayout HorizontalOptions="Start" Spacing="50">
+                </Frame>
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="{OnIdiom Phone=350,
+                                            Desktop=900}"
+                    Source="ourteam.jpg"
+                    WidthRequest="{OnIdiom Phone=350,
+                                           Desktop=900}" />
+                <Frame
+                    Margin="{OnIdiom Phone='10,0,10,0',
+                                     Desktop='100,0,100,0'}"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59">
+                    <VerticalStackLayout Spacing="10">
                         <Label
                             FontAttributes="Bold"
                             FontFamily="InstrumentSerif"
-                            FontSize="50"
-                            Text="KIAN   -   Lead Developer , Frontend Developer , Backend Developer"
-                            TextColor="#ffbd59"
-                            VerticalTextAlignment="Center" />
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=60}"
+                            HorizontalTextAlignment="Center"
+                            Text="Founders and Leadership"
+                            TextColor="#ffbd59" />
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="300"
+                            Source="heiden.jpg"
+                            WidthRequest="300" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=50}"
+                            HorizontalTextAlignment="Center"
+                            Text="HEIDEN   -   CEO"
+                            TextColor="#ffbd59" />
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="300"
+                            Source="rhian.jpg"
+                            WidthRequest="300" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="{OnIdiom Phone=20,
+                                               Desktop=50}"
+                            HorizontalTextAlignment="Center"
+                            Text="RHIAN   -   CO-CEO"
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    x:Name="desktopUS"
+                    Margin="100,0,100,0"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59"
+                    IsVisible="True">
+                    <VerticalStackLayout Padding="50,0,50,0" Spacing="50">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="60"
+                            HorizontalTextAlignment="Center"
+                            Text="Development and Design Team"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="30"
+                            HorizontalTextAlignment="Center"
+                            Text="Our development team ensures that Shuatik runs smoothly on both desktop and mobile. From UI/UX design to backend services, this team makes sure our web app is efficient and user-friendly."
+                            TextColor="#ffbd59" />
+                        <HorizontalStackLayout HorizontalOptions="Start" Spacing="50">
+                            <Label
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="50"
+                                Text="KIAN   -   Lead Developer , Frontend Developer , Backend Developer"
+                                TextColor="#ffbd59"
+                                VerticalTextAlignment="Center" />
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="300"
+                                Source="pogi.jpg"
+                                WidthRequest="300" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="End" Spacing="50">
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="300"
+                                Source="chloe.jpg"
+                                WidthRequest="300" />
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontFamily="InstrumentSerif"
+                                    FontSize="50"
+                                    Text="CHLOE  -  Co-Lead Developer, Frontend Developer, Backend Developer"
+                                    TextColor="#ffbd59"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontFamily="InstrumentSerif"
+                                    FontSize="50"
+                                    Text="   -   UI HEAD DESIGNER"
+                                    TextColor="#ffbd59"
+                                    VerticalTextAlignment="End" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="Start" Spacing="100">
+                            <Label
+                                FontAttributes="Bold"
+                                FontFamily="InstrumentSerif"
+                                FontSize="50"
+                                Text="HAYDEN   -   Frontend Developer"
+                                TextColor="#ffbd59"
+                                VerticalTextAlignment="Center" />
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="300"
+                                Source="hayden.jpg"
+                                WidthRequest="300" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame
+                    x:Name="mobileUS"
+                    Margin="10,0,10,0"
+                    Padding="10"
+                    BackgroundColor="#541414"
+                    BorderColor="#ffbd59"
+                    IsVisible="False">
+                    <VerticalStackLayout Padding="10,0,10,0" Spacing="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Development and Design Team"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Our development team ensures that Shuatik runs smoothly on both desktop and mobile. From UI/UX design to backend services, this team makes sure our web app is efficient and user-friendly."
+                            TextColor="#ffbd59" />
                         <Image
                             Aspect="AspectFill"
                             HeightRequest="300"
                             Source="pogi.jpg"
                             WidthRequest="300" />
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout HorizontalOptions="End" Spacing="50">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="KIAN"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Lead Developer"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Frontend Developer"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Backend Developer"
+                            TextColor="#ffbd59" />
                         <Image
                             Aspect="AspectFill"
                             HeightRequest="300"
                             Source="chloe.jpg"
                             WidthRequest="300" />
-                        <VerticalStackLayout VerticalOptions="Center">
-                            <Label
-                                FontAttributes="Bold"
-                                FontFamily="InstrumentSerif"
-                                FontSize="50"
-                                Text="CHLOE  -  Co-Lead Developer, Frontend Developer, Backend Developer"
-                                TextColor="#ffbd59"
-                                VerticalTextAlignment="Center" />
-                            <Label
-                                FontAttributes="Bold"
-                                FontFamily="InstrumentSerif"
-                                FontSize="50"
-                                Text="   -   UI HEAD DESIGNER"
-                                TextColor="#ffbd59"
-                                VerticalTextAlignment="End" />
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout HorizontalOptions="Start" Spacing="100">
                         <Label
                             FontAttributes="Bold"
                             FontFamily="InstrumentSerif"
-                            FontSize="50"
-                            Text="HAYDEN   -   Frontend Developer"
-                            TextColor="#ffbd59"
-                            VerticalTextAlignment="Center" />
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="CHLOE"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Co-Lead Developer"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Frontend Developer"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Backend Developer"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="UI HEAD DESIGNER"
+                            TextColor="#ffbd59" />
                         <Image
                             Aspect="AspectFill"
                             HeightRequest="300"
                             Source="hayden.jpg"
                             WidthRequest="300" />
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
-            </Frame>
-            <Frame
-                x:Name="mobileUS"
-                Margin="10,0,10,0"
-                Padding="10"
-                BackgroundColor="#541414"
-                BorderColor="#ffbd59"
-                IsVisible="False">
-                <VerticalStackLayout Padding="10,0,10,0" Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Development and Design Team"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Our development team ensures that Shuatik runs smoothly on both desktop and mobile. From UI/UX design to backend services, this team makes sure our web app is efficient and user-friendly."
-                        TextColor="#ffbd59" />
-                    <Image
-                        Aspect="AspectFill"
-                        HeightRequest="300"
-                        Source="pogi.jpg"
-                        WidthRequest="300" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="KIAN"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Lead Developer"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Frontend Developer"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Backend Developer"
-                        TextColor="#ffbd59" />
-                    <Image
-                        Aspect="AspectFill"
-                        HeightRequest="300"
-                        Source="chloe.jpg"
-                        WidthRequest="300" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="CHLOE"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Co-Lead Developer"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Frontend Developer"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Backend Developer"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="UI HEAD DESIGNER"
-                        TextColor="#ffbd59" />
-                    <Image
-                        Aspect="AspectFill"
-                        HeightRequest="300"
-                        Source="hayden.jpg"
-                        WidthRequest="300" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="HAYDEN"
-                        TextColor="#ffbd59" />
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="InstrumentSerif"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Frontend Developer"
-                        TextColor="#ffbd59" />
-                </VerticalStackLayout>
-            </Frame>
-        </VerticalStackLayout>
-    </ScrollView>
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="HAYDEN"
+                            TextColor="#ffbd59" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="InstrumentSerif"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Frontend Developer"
+                            TextColor="#ffbd59" />
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+        <AbsoluteLayout
+            Grid.Row="0"
+            BackgroundColor="Transparent"
+            IsVisible="{OnIdiom Phone=true,
+                                Desktop=false,
+                                Tablet=false}"
+            ZIndex="1">
+
+            <Button
+                x:Name="backtotop"
+                Margin="20,0,20,80"
+                AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                BackgroundColor="Black"
+                BorderColor="White"
+                BorderWidth="3"
+                Clicked="OnBackToTopClicked"
+                CornerRadius="40"
+                FontAttributes="Bold"
+                FontSize="40"
+                HeightRequest="70"
+                IsVisible="False"
+                Opacity=".5"
+                Text="↑"
+                TextColor="White"
+                WidthRequest="70" />
+        </AbsoluteLayout>
+    </Grid>
 </ContentPage>
